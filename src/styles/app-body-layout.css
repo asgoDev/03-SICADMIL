@@ -1,0 +1,11 @@
+
+
+.app-content {
+  flex-grow: 1;
+}
+
+.app-footer {
+  text-align: center;
+  font-size: .8rem;
+  letter-spacing: .2rem;
+}

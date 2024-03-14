@@ -1,0 +1,15 @@
+.app-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.app-section__title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.app-section__main {
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
