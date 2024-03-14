@@ -41,3 +41,9 @@
   border: 1px solid var(--principal-color)
 }
 
+@media (max-width: 480px) {
+  .form__section {
+    padding: 0;
+  }
+}
+

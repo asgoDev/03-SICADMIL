@@ -61,3 +61,19 @@
   color: white; */
   color: var(--principal-font-color);
 }
+
+
+@media (max-width: 480px) {
+  .app-header {
+    /* display: none; */
+    overflow: hidden;
+  }
+
+  .app-header__li:first-child {
+    display: none;
+  }
+
+  .app-header__img:last-child {
+    display: none;
+  }
+}

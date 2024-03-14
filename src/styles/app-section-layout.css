@@ -13,3 +13,9 @@
 .app-section__main {
   font-family: 'Raleway', Arial, Helvetica, sans-serif;
 }
+
+@media (max-width: 480px) {
+  .app-section {
+    padding: 1.2rem 1rem;
+  }
+}
