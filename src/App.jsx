@@ -9,9 +9,9 @@ function App() {
   return (
     <AppBodyLayout>
       <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="form-planilla" element={<IncripcionMilitarGenerator />} />
-        <Route path="contacto" element={<Contacto />} />
+        <Route path="SICADMIL" element={<Welcome />} />
+        <Route path="/SICADMIL/inscripcion-militar-form" element={<IncripcionMilitarGenerator />} />
+        <Route path="/SICADMIL/contacto" element={<Contacto />} />
       </Routes>
     </AppBodyLayout>
   );

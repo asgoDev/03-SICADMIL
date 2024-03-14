@@ -16,13 +16,13 @@ function AppHeader() {
             <hr noshade='noshade' />
           </li>
           <li className="app-header__li">
-            <Link to="/">Inicio</Link>
+            <Link to="/SICADMIL">Inicio</Link>
           </li>
           <li className="app-header__li">
-            <Link to="form-planilla">Planilla de Incripción Militar</Link>
+            <Link to="/SICADMIL/inscripcion-militar-form">Planilla de Incripción Militar</Link>
           </li>
           <li className="app-header__li">
-            <Link to="contacto">Contacto</Link>
+            <Link to="/SICADMIL/contacto">Contacto</Link>
           </li>
         </ul>
       </nav>
