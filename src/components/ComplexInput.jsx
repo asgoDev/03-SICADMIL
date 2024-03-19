@@ -1,13 +1,30 @@
-import { useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { GlobalContext } from "../context/GlobalContext";
 import "../styles/complex-input.css";
 import Input from "./Input";
 import Select from "./Select";
 import Radio from "./Radio";
 
 function ComplexInput({ inputConfig = {}, width }) {
-  const { id, label = "label", type = "text", options = [] } = inputConfig;
-
+  const {
+    id,
+    label = "label",
+    type = "text",
+    options = [],
+    required,
+  } = inputConfig;
   const [inputValue, setInputValue] = useState("");
+  const { requiredInputs, setRequiredInputs } = useContext(GlobalContext);
+
+  useEffect(() => {
+    if (required) {
+      setRequiredInputs((prevState)=>{
+        let objeto = {...requiredInputs}
+        objeto[id] = false;
+        return {...prevState, ...objeto}
+      });
+    }
+  }, []);
 
   // const formatInput = (e) => {
 
@@ -26,9 +43,23 @@ function ComplexInput({ inputConfig = {}, width }) {
 
   const chooseElement = () => {
     if (type == "select")
-      return <Select id={id} options={options} value={inputValue} setValue={setInputValue} />;
+      return (
+        <Select
+          id={id}
+          options={options}
+          value={inputValue}
+          setValue={setInputValue}
+        />
+      );
     if (type == "radio")
-      return <Radio id={id} options={options} value={inputValue} setValue={setInputValue} />;
+      return (
+        <Radio
+          id={id}
+          options={options}
+          value={inputValue}
+          setValue={setInputValue}
+        />
+      );
     return (
       <Input
         id={id}
@@ -44,7 +75,11 @@ function ComplexInput({ inputConfig = {}, width }) {
     <label className={`complex-input-label ${width}`} htmlFor={id}>
       <span
         className={`complex-input-label__title  ${
-          (inputValue || type == "date" || type == "select" || type == "radio") && "t-translate-0"
+          (inputValue ||
+            type == "date" ||
+            type == "select" ||
+            type == "radio") &&
+          "t-translate-0"
         }`}
       >
         {label}

@@ -4,36 +4,35 @@ import ComplexInput from "./ComplexInput";
 
 function IncripcionMilitarGenerator() {
   const inputConfigPersonal = {
-    ci: {
-      id: "ci",
-      label: "C.I.",
-      element: "input",
-      type: "",
-    },
+    ci: { id: "ci", label: "C.I.", type: "", format: "", required: true },
     nombre: {
       id: "name",
       label: "Nombre",
+      type: "",
       format: "",
+      required: true,
     },
     apellido: {
       id: "lastname",
       label: "Apellido",
-      element: "input",
-
+      type: "",
       format: "",
+      required: true,
     },
     sexo: {
       id: "sex",
-      label: 'Sexo',
+      label: "Sexo",
       type: "radio",
       options: ["Masculino", "Femenino"],
       format: "",
+      required: true,
     },
     fechaDeNacimiento: {
       id: "birthdate",
       label: "Fecha de Nacimiento",
-      format: "",
       type: "date",
+      format: "",
+      required: true,
     },
     edoCivil: {
       id: "edoCivil",
@@ -41,82 +40,101 @@ function IncripcionMilitarGenerator() {
       type: "select",
       options: ["Soltero/a", "Divorciado/a", "Casado/a", "Viudo/a"],
       format: "",
+      required: true,
     },
-    rif: {
-      id: "rif",
-      label: "RIF",
-      format: "",
-    },
+    rif: { id: "rif", label: "RIF", type: "", format: "" },
     nacionalidad: {
       id: "nacionalidad",
       label: "Venezolano por...",
       type: "select",
       options: ["Nacimiento", "Naturalización"],
       format: "",
+      required: true,
     },
     nroGaceta: {
       id: "nroGaceta",
       label: "Nro. Gaceta (GORBV N°#####)",
+      type: "",
       format: "",
     },
     fechaGaceta: {
       id: "fechaGaceta",
       label: "Fecha de publicación de gaceta:",
-      format: "",
       type: "date",
+      format: "",
     },
     lugarNacimiento: {
       pais: {
         id: "paisNacimiento",
         label: "País",
+        type: "",
         format: "",
+        required: true,
       },
       estado: {
         id: "estadoNacimiento",
         label: "Estado",
+        type: "",
         format: "",
+        required: true,
       },
       municipio: {
         id: "municipioNacimiento",
         label: "Municipio",
+        type: "",
         format: "",
+        required: true,
       },
       parroquia: {
         id: "parroquiaNacimiento",
         label: "Parroquia",
+        type: "",
         format: "",
+        required: true,
       },
     },
     direccionDomiciliaria: {
       pais: {
         id: "paisDomicilio",
         label: "País",
+        type: "",
         format: "",
+        required: true,
       },
       estado: {
         id: "estadoDomicilio",
         label: "Estado",
+        type: "",
         format: "",
+        required: true,
       },
       municipio: {
         id: "municipioDomicilio",
         label: "Municipio",
+        type: "",
         format: "",
+        required: true,
       },
       parroquia: {
         id: "parroquiaDomicilio",
         label: "Parroquia",
+        type: "",
         format: "",
+        required: true,
       },
       via: {
         id: "viaDomicilio",
         label: "Vía",
+        type: "",
         format: "",
+        required: true,
       },
       area: {
         id: "areaDomicilio",
         label: "Área",
+        type: "",
         format: "",
+        required: true,
       },
       tipoInmueble: {
         id: "tipoInmueble",
@@ -124,40 +142,58 @@ function IncripcionMilitarGenerator() {
         type: "select",
         options: ["Casa", "Apartamento", "Quinta", "Edificio", "Local"],
         format: "",
+        required: true,
       },
       nroInmueble: {
         id: "nroInmueble",
         label: "Nro. Inmueble",
+        type: "",
         format: "",
+        required: true,
       },
     },
     telefonoMovil: {
       id: "numeroMovil",
       label: "Tlf. Celular",
+      type: "",
       format: "xxx-xxxx",
+      required: true,
     },
     telefonoHabitacion: {
       id: "telefonoHabitacion",
       label: "Teléfono Habitación",
+      type: "",
       format: "",
     },
     telefonoOficina: {
       id: "telefonoOficina",
       label: "Teléfono Oficina",
+      type: "",
       format: "",
     },
     correoElectronico: {
       id: "correoElectronico",
       label: "Correo Electrónico",
-      format: "",
       type: "email",
+      format: "",
+      required: true,
     },
     grupoSanguineo: {
       id: "grupoSanguineo",
       label: "Grupo Sanguíneo",
-      type: 'select',
-      options: ['ARH+', 'ARH-','ABRH+', 'ABRH-','BRH+', 'BRH-','ORH+', 'ORH-'],
+      type: "select",
+      options: [
+        "ARH+",
+        "ARH-",
+        "ABRH+",
+        "ABRH-",
+        "BRH+",
+        "BRH-",
+        "ORH+",
+        "ORH-",
+      ],
       format: "",
+      required: true,
     },
     hijos: {
       id: "hijos",
@@ -165,6 +201,7 @@ function IncripcionMilitarGenerator() {
       type: "radio",
       options: ["Si", "No"],
       format: "",
+      required: true,
     },
     elegible: {
       id: "elegible",
@@ -172,27 +209,22 @@ function IncripcionMilitarGenerator() {
       type: "radio",
       options: ["Si", "No"],
       format: "",
-
+      required: true,
     },
-    causa: {
-      id: "causa",
-      label: "Causa",
-      format: "",
-    },
+    causa: { id: "causa", label: "Causa", type: "", format: "" },
   };
 
   const inputConfigSocio = {
     gradoInstruccion: {
       id: "educationLevel",
       label: "Grado de Instrucción",
-      format: "",
       type: "select",
+      format: "",
     },
     estudia: {
       id: "isStudying",
       label: "¿Estudia?",
       format: "",
-      // type: "radio",
     },
     tipoEstudio: {
       id: "studyType",
@@ -207,8 +239,8 @@ function IncripcionMilitarGenerator() {
     institucion: {
       id: "institution",
       label: "Institución",
-      format: "",
       type: "select",
+      format: "",
     },
     nombreInstituto: {
       id: "instituteName",
@@ -219,13 +251,12 @@ function IncripcionMilitarGenerator() {
       id: "isWorking",
       label: "¿Trabaja?",
       format: "",
-      // type: "radio",
     },
     ocupacionOficio: {
       id: "occupation",
       label: "Ocupación u Oficio",
-      format: "",
       type: "select",
+      format: "",
     },
     empresa: {
       id: "company",
@@ -236,26 +267,26 @@ function IncripcionMilitarGenerator() {
       pais: {
         id: "companyCountry",
         label: "País",
-        format: "",
         type: "select",
+        format: "",
       },
       estado: {
         id: "companyState",
         label: "Estado",
-        format: "",
         type: "select",
+        format: "",
       },
       municipio: {
         id: "companyMunicipality",
         label: "Municipio",
-        format: "",
         type: "select",
+        format: "",
       },
       parroquia: {
         id: "companyParish",
         label: "Parroquia",
-        format: "",
         type: "select",
+        format: "",
       },
     },
     telefonoEmpresa: {
@@ -270,7 +301,6 @@ function IncripcionMilitarGenerator() {
       id: "preMilitaryTraining",
       label: "Instrucción Premilitar",
       format: "",
-      // type: "radio",
     },
     nombreInstituto: {
       id: "militaryInstituteName",
@@ -385,12 +415,19 @@ function IncripcionMilitarGenerator() {
     },
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const formDataObject = {};
+    for (let [key, value] of data.entries()) {
+      formDataObject[key] = value;
+    }
+    console.log(formDataObject);
+  };
+
   return (
     <AppSectionLayout title={"Planilla de Inscripción Militar"}>
-      <form className="form" action="#" onSubmit={(e)=>{
-        e.preventDefault()
-        console.log(e.target.sex.value);
-      }}>
+      <form className="form" action="#" onSubmit={handleSubmit}>
         <div className="form__section-container">
           <section id="personal-section" className="form__section">
             <h2 className="form__subtitle">1.-Información Personal</h2>
@@ -622,7 +659,7 @@ function IncripcionMilitarGenerator() {
             </div>
           </section>
         </div>
-        <input type="submit" value={'enviar'} />
+        <input type="submit" value={"enviar"} />
       </form>
     </AppSectionLayout>
   );

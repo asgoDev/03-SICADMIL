@@ -9,6 +9,7 @@
   /* --bg-color: white; */
   --principal-color: #255b99;
   --principal-font-color: #121212;
+  --denied-color: rgb(231, 64, 64);
   --input-border: 1px solid gray;
   --input-radius: 2px;
 }
@@ -37,6 +38,10 @@ ul {
   list-style: none;
 }
 
+fieldset {
+  border: var(--input-border);
+}
+
 input,
 select {
   height: 100%;
@@ -53,6 +58,11 @@ select {
 }
 
 input:focus {
-  /* accent-color: var(--principal-color); */
   border-color: var(--principal-color);
+  box-shadow: 0 0 3px -1px var(--principal-color);
+}
+
+.invalid-input {
+  border-color: var(--denied-color);
+  box-shadow: 0 0 3px -1px var(--denied-color);
 }

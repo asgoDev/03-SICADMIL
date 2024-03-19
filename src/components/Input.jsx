@@ -3,7 +3,9 @@ import React from 'react'
 function Input({id, type, placeholder, value, setValue}) {
   return (
     <input
+    // className='invalid-input'
         id={id}
+        name={id}
         type={type}
         placeholder={placeholder}
         value={value}
