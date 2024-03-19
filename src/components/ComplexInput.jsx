@@ -18,10 +18,10 @@ function ComplexInput({ inputConfig = {}, width }) {
 
   useEffect(() => {
     if (required) {
-      setRequiredInputs((prevState)=>{
-        let objeto = {...requiredInputs}
+      setRequiredInputs((prevState) => {
+        let objeto = { ...requiredInputs };
         objeto[id] = false;
-        return {...prevState, ...objeto}
+        return { ...prevState, ...objeto };
       });
     }
   }, []);
@@ -72,9 +72,12 @@ function ComplexInput({ inputConfig = {}, width }) {
   };
 
   return (
-    <label className={`complex-input-label ${width}`} htmlFor={id}>
+    <label
+      className={`complex-input-label ${required && "required"}`}
+      htmlFor={id}
+    >
       <span
-        className={`complex-input-label__title  ${
+        className={`complex-input-label__title ${
           (inputValue ||
             type == "date" ||
             type == "select" ||
