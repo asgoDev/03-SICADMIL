@@ -1,6 +1,11 @@
 import React from "react";
 
-function Input({ id, type, placeholder, value, setValue }) {
+function Input({ id, type, placeholder, value, setValue, regEx }) {
+
+  const inputControl = (e) => {
+    if(!regEx) return setValue(e.target.value)
+  };
+
   return (
     <input
       id={id}
@@ -8,10 +13,9 @@ function Input({ id, type, placeholder, value, setValue }) {
       type={type}
       placeholder={placeholder}
       value={value}
-      onChange={(e) => {
-        setValue(e.target.value);
-      }}
+      onChange={inputControl}
       autoComplete="off"
+      title={`${'Indique con una X si recibió o no instrucción premilitar'}`}
     />
   );
 }

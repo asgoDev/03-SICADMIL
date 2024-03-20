@@ -3,21 +3,24 @@ import { createContext } from "react";
 
 export const GlobalContext = createContext();
 
-const isAllInputsChecked = (inputsObj) => {
+const checkImportantInput = (inputsObj) => {
   if(!inputsObj) return
   let values = Object.values(inputsObj)
-  console.log(values.every(element => element)); 
+  return (values.every(element => element)); 
 }
 
 function GlobalContextProvider(props) {
   const [requiredInputs, setRequiredInputs] = useState({});
+  const [isAllInputOk, setIsAllInputOk] = useState(false)
+
+
   useEffect(()=>{
-    isAllInputsChecked(requiredInputs)
+    setIsAllInputOk(checkImportantInput(requiredInputs))
   }, [requiredInputs])
 
 
   return (
-    <GlobalContext.Provider value={{ requiredInputs, setRequiredInputs }}>
+    <GlobalContext.Provider value={{ requiredInputs, setRequiredInputs, isAllInputOk }}>
       {props.children}
     </GlobalContext.Provider>
   );

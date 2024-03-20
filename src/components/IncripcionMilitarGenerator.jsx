@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import AppSectionLayout from "../AppSectionLayout";
 import "../styles/inscripcion-militar-generator.css";
 import ComplexInput from "./ComplexInput";
+import { GlobalContext } from "../context/GlobalContext";
 
 function IncripcionMilitarGenerator() {
+  let { isAllInputOk } = useContext(GlobalContext);
+
   const inputConfigPersonal = {
-    ci: { id: "ci", label: "C.I.", type: "", format: "", required: true },
+    ci: { id: "ci", label: "C.I.", type: "number", format: "", required: true },
     nombre: {
       id: "name",
       label: "Nombre",
@@ -209,7 +213,6 @@ function IncripcionMilitarGenerator() {
       type: "radio",
       options: ["Si", "No"],
       format: "",
-      required: true,
     },
     causa: { id: "causa", label: "Causa", type: "", format: "" },
   };
@@ -459,10 +462,10 @@ function IncripcionMilitarGenerator() {
                 inputConfig={inputConfigPersonal.lugarNacimiento.estado}
               />
               <ComplexInput
-                inputConfig={inputConfigPersonal.lugarNacimiento.parroquia}
+                inputConfig={inputConfigPersonal.lugarNacimiento.municipio}
               />
               <ComplexInput
-                inputConfig={inputConfigPersonal.lugarNacimiento.municipio}
+                inputConfig={inputConfigPersonal.lugarNacimiento.parroquia}
               />
             </fieldset>
             <fieldset className="form__fieldset">
@@ -475,14 +478,14 @@ function IncripcionMilitarGenerator() {
               <ComplexInput
                 inputConfig={inputConfigPersonal.direccionDomiciliaria.estado}
               />
+                  <ComplexInput
+                    inputConfig={
+                      inputConfigPersonal.direccionDomiciliaria.municipio
+                    }
+                  />
               <ComplexInput
                 inputConfig={
                   inputConfigPersonal.direccionDomiciliaria.parroquia
-                }
-              />
-              <ComplexInput
-                inputConfig={
-                  inputConfigPersonal.direccionDomiciliaria.municipio
                 }
               />
               <ComplexInput
@@ -659,7 +662,7 @@ function IncripcionMilitarGenerator() {
             </div>
           </section>
         </div>
-        <input type="submit" value={"enviar"} />
+        {isAllInputOk && <input type="submit" value={"enviar"} />}
       </form>
     </AppSectionLayout>
   );

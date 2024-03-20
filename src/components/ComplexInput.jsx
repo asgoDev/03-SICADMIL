@@ -20,11 +20,12 @@ function ComplexInput({ inputConfig = {}, width }) {
     if (required) {
       setRequiredInputs((prevState) => {
         let objeto = { ...requiredInputs };
-        objeto[id] = false;
+        objeto[id] = inputValue;
         return { ...prevState, ...objeto };
       });
     }
-  }, []);
+  }, [inputValue]);
+
 
   // const formatInput = (e) => {
 
