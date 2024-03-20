@@ -447,6 +447,7 @@ function IncripcionMilitarGenerator() {
               <ComplexInput inputConfig={inputConfigPersonal.edoCivil} />
               <ComplexInput inputConfig={inputConfigPersonal.rif} />
               <input type="file" aria-label="Archivo" name="selfie" accept="image/*" capture="user"/>
+              <input type="file" aria-label="Archivo" name="selfie" accept="image/*"/>
             </fieldset>
 
             <fieldset className="form__fieldset">
