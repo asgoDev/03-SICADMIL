@@ -5,7 +5,7 @@ import ComplexInput from "./ComplexInput";
 import { GlobalContext } from "../context/GlobalContext";
 
 function IncripcionMilitarGenerator() {
-  let { isAllInputOk } = useContext(GlobalContext);
+  let { isAllInputOk, setFormData } = useContext(GlobalContext);
 
   const inputConfigPersonal = {
     ci: { id: "ci", label: "C.I.", type: "number", format: "", required: true },
@@ -425,7 +425,7 @@ function IncripcionMilitarGenerator() {
     for (let [key, value] of data.entries()) {
       formDataObject[key] = value;
     }
-    console.log(formDataObject);
+    setFormData(formDataObject);
   };
 
   return (
@@ -436,6 +436,7 @@ function IncripcionMilitarGenerator() {
             <h2 className="form__subtitle">1.-Información Personal</h2>
             <fieldset className="form__fieldset">
               <legend className="form__legend">Datos personales</legend>
+              
               <ComplexInput inputConfig={inputConfigPersonal.ci} />
               <ComplexInput inputConfig={inputConfigPersonal.apellido} />
               <ComplexInput inputConfig={inputConfigPersonal.nombre} />
@@ -445,6 +446,7 @@ function IncripcionMilitarGenerator() {
               <ComplexInput inputConfig={inputConfigPersonal.sexo} />
               <ComplexInput inputConfig={inputConfigPersonal.edoCivil} />
               <ComplexInput inputConfig={inputConfigPersonal.rif} />
+              {/* <input type="file" aria-label="Archivo" name="selfie" accept="image/*" capture="user"/> */}
             </fieldset>
 
             <fieldset className="form__fieldset">
