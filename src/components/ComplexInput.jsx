@@ -4,6 +4,7 @@ import "../styles/complex-input.css";
 import Input from "./Input";
 import Select from "./Select";
 import Radio from "./Radio";
+import InputFile from "./InputFile";
 
 function ComplexInput({ inputConfig = {}, width }) {
   const {
@@ -25,7 +26,6 @@ function ComplexInput({ inputConfig = {}, width }) {
       });
     }
   }, [inputValue]);
-
 
   // const formatInput = (e) => {
 
@@ -61,6 +61,16 @@ function ComplexInput({ inputConfig = {}, width }) {
           setValue={setInputValue}
         />
       );
+    if (type == "file")
+      return (
+        <InputFile
+          id={id}
+          type={type}
+          placeholder={label}
+          value={inputValue}
+          setValue={setInputValue}
+        />
+      );
     return (
       <Input
         id={id}
@@ -82,6 +92,7 @@ function ComplexInput({ inputConfig = {}, width }) {
           (inputValue ||
             type == "date" ||
             type == "select" ||
+            type == "file" ||
             type == "radio") &&
           "t-translate-0"
         }`}

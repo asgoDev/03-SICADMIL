@@ -36,7 +36,7 @@
 
 .page-title {
   text-align: center;
-  line-height: 1.5rem;
+  line-height: 23pt;
 }
 
 .page-date {
@@ -75,9 +75,9 @@
 .table-title {
   font-size: 8pt;
   font-weight: 700;
-  line-height: 0.9rem;
-  padding-left: 0.3rem;
-  margin-bottom: 0.1rem;
+  line-height: 13pt;
+  padding-left: 4pt;
+  margin-bottom: 1.5pt;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
@@ -89,12 +89,13 @@
 .table-subtitle {
   grid-column: span 12;
   font-weight: 600;
-  margin-top: 0.2rem;
+  margin-top: 3pt;
 }
 
 .table-cell {
-  padding-left: 0.6rem;
-  line-height: 0.7rem;
+  padding-left: 9pt;
+  line-height: 10.5pt;
+  font-size: 6pt;
 }
 
 .span-2 {
@@ -182,7 +183,7 @@
 
 .card__content-container {
   display: flex;
-  padding: 0.2rem 0.4rem;
+  padding: 3pt 6pt;
 }
 
 .card__principal-data {
@@ -206,7 +207,7 @@
 
 .card__subtitle,
 .card__item {
-  line-height: 0.6rem;
+  line-height: 9pt;
 }
 
 .card__subtitle {
@@ -216,25 +217,25 @@
 }
 
 .card__item {
-  text-indent: 0.2rem;
+  text-indent: 3pt;
   font-weight: normal;
   font-size: inherit;
 }
 
 .margin-top {
-  margin-top: 0.2rem;
+  margin-top: 3pt;
 }
 
 .card-b {
-  padding: 0.9rem 0.6rem;
+  padding: 13.5pt 9pt;
 }
 
 .card-b__militar-info {
   width: 35%;
-  margin-left: 1.4rem;
+  margin-left: 21pt;
 }
 .card-b .card__subtitle {
-  margin-bottom: 0.1rem;
+  margin-bottom: 1.5pt;
 }
 
 .card-b__militar-info p {

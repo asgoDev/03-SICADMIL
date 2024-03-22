@@ -1,4 +1,3 @@
-import React from "react";
 
 function Input({ id, type, placeholder, value, setValue, regEx }) {
 

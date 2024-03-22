@@ -47,6 +47,11 @@ function IncripcionMilitarGenerator() {
       required: true,
     },
     rif: { id: "rif", label: "RIF", type: "", format: "" },
+    picture: {
+      id: "picture",
+      label: "Foto",
+      type: "file",
+    },
     nacionalidad: {
       id: "nacionalidad",
       label: "Venezolano por...",
@@ -436,7 +441,7 @@ function IncripcionMilitarGenerator() {
             <h2 className="form__subtitle">1.-Información Personal</h2>
             <fieldset className="form__fieldset">
               <legend className="form__legend">Datos personales</legend>
-              
+
               <ComplexInput inputConfig={inputConfigPersonal.ci} />
               <ComplexInput inputConfig={inputConfigPersonal.apellido} />
               <ComplexInput inputConfig={inputConfigPersonal.nombre} />
@@ -446,8 +451,7 @@ function IncripcionMilitarGenerator() {
               <ComplexInput inputConfig={inputConfigPersonal.sexo} />
               <ComplexInput inputConfig={inputConfigPersonal.edoCivil} />
               <ComplexInput inputConfig={inputConfigPersonal.rif} />
-              <input type="file" aria-label="Archivo" name="selfie" accept="image/*" capture="user"/>
-              <input type="file" aria-label="Archivo" name="selfie" accept="image/*"/>
+              {/* <ComplexInput inputConfig={inputConfigPersonal.picture} /> */}
             </fieldset>
 
             <fieldset className="form__fieldset">
@@ -481,11 +485,11 @@ function IncripcionMilitarGenerator() {
               <ComplexInput
                 inputConfig={inputConfigPersonal.direccionDomiciliaria.estado}
               />
-                  <ComplexInput
-                    inputConfig={
-                      inputConfigPersonal.direccionDomiciliaria.municipio
-                    }
-                  />
+              <ComplexInput
+                inputConfig={
+                  inputConfigPersonal.direccionDomiciliaria.municipio
+                }
+              />
               <ComplexInput
                 inputConfig={
                   inputConfigPersonal.direccionDomiciliaria.parroquia
