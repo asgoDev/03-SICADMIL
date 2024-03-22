@@ -1,7 +1,12 @@
 .app-section {
+  width: 100%;
   max-width: 1200px;
-  margin: auto;
   padding: 2rem;
+  flex-grow: 1;
+  /* margin: auto; */
+  /* justify-self: center; */
+  display: flex;
+  flex-direction: column;
 }
 
 .app-section__title {
@@ -12,6 +17,7 @@
 
 .app-section__main {
   font-family: 'Raleway', Arial, Helvetica, sans-serif;
+  flex-grow: 1;
 }
 
 @media (max-width: 480px) {

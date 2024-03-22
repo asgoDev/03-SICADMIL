@@ -665,7 +665,7 @@ function IncripcionMilitarGenerator() {
             </div>
           </section>
         </div>
-        {isAllInputOk && <input type="submit" value={"enviar"} />}
+        {/* {isAllInputOk && <input type="submit" value={"enviar"} />} */}
       </form>
     </AppSectionLayout>
   );

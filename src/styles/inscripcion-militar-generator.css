@@ -5,12 +5,12 @@
 }
 
 .form__section-container {
+  width: 300%;
   display: flex;
 }
 
 .form__section {
-  width: 100%;
-  flex-shrink: 0;
+  flex-basis: 100%;
   padding: 0 1rem;
 }
 .form__subtitle {
@@ -38,7 +38,11 @@
   bottom: 30px; */
   max-width: fit-content;
   margin: auto;
-  border: 1px solid var(--principal-color)
+  border: 1px solid var(--principal-color);
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 480px) {
