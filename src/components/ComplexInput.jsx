@@ -92,7 +92,6 @@ function ComplexInput({ inputConfig = {}, width }) {
           (inputValue ||
             type == "date" ||
             type == "select" ||
-            type == "file" ||
             type == "radio") &&
           "t-translate-0"
         }`}

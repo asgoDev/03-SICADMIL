@@ -1,6 +1,7 @@
 .complex-input__radio-fieldset {
-  padding: .3rem .7rem;
- min-width: max-content;
+  padding: 0.3rem 0.7rem;
+  min-width: max-content;
+  border-radius: var(--input-radius);
 }
 
 .complex-input__radio-label {
@@ -9,7 +10,7 @@
 }
 
 .complex-input__radio {
-  margin-right: .3rem;
+  margin-right: 0.3rem;
   vertical-align: middle;
 }
 

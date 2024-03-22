@@ -1,4 +1,5 @@
 import "../styles/input-file.css";
+import camera from "../assets/camera.png";
 
 function InputFile({ id, type, placeholder, value, setValue, regEx }) {
   const inputControl = (e) => {
@@ -19,6 +20,10 @@ function InputFile({ id, type, placeholder, value, setValue, regEx }) {
         autoComplete="off"
         title={`${"Tome una fotografía desde su celular o seleccione de su galeria"}`}
       />
+      <div className="label__input-container-mask">
+        <span className="input-file__fake-btn">{value ? `${value}`:'Cargar imagen...'}</span>
+        <img className="input-file__img" src={camera} alt="" />
+      </div>
     </div>
   );
 }

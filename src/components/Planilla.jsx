@@ -35,8 +35,8 @@ function Planilla() {
           <div className="table-title span-8">1. INFORMACIÓN PERSONAL</div>
           <div className="table-title span-4 border-left">NRO. REGISTRO</div>
           <span className="table-cell span-2">C.I: 26.266.384</span>
-          <span className="table-cell span-5">APELLIDOS: </span>
-          <span className="table-cell span-5">NOMBRES: </span>
+          <span className="table-cell span-5">APELLIDOS: {formData.lastName}</span>
+          <span className="table-cell span-5">NOMBRES: {formData.name}</span>
           <span className="table-cell span-2">SEXO: {formData.sex}</span>
           <span className="table-cell span-4">
             FECHA DE NACIMIENTO: {formData.birthdate}
@@ -193,7 +193,9 @@ function Planilla() {
                 <p className="card__item">municipio: 26.266.384</p>
                 <p className="card__item">parroquia: 26.266.384</p>
               </div>
-              <div className="card__picture"></div>
+              <div className="card__picture">
+                <img src={formData.picture} alt="" />
+              </div>
             </div>
           </div>
           <div className="card-b border-left">

@@ -451,7 +451,7 @@ function IncripcionMilitarGenerator() {
               <ComplexInput inputConfig={inputConfigPersonal.sexo} />
               <ComplexInput inputConfig={inputConfigPersonal.edoCivil} />
               <ComplexInput inputConfig={inputConfigPersonal.rif} />
-              {/* <ComplexInput inputConfig={inputConfigPersonal.picture} /> */}
+              <ComplexInput inputConfig={inputConfigPersonal.picture} />
             </fieldset>
 
             <fieldset className="form__fieldset">
@@ -669,7 +669,7 @@ function IncripcionMilitarGenerator() {
             </div>
           </section>
         </div>
-        {/* {isAllInputOk && <input type="submit" value={"enviar"} />} */}
+        {isAllInputOk && <input type="submit" value={"enviar"} />}
       </form>
     </AppSectionLayout>
   );
