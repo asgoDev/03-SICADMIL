@@ -6,18 +6,7 @@
 
 }
 
-
-
-
 @media print {
-
-  .page {
-    /* size: letter; */
-    /* width: unset; */
-    box-shadow: none;
-    /* margin: 0; */
-    /* padding: 0; */
-  }
 
   .app-header {
     display: none;
@@ -29,6 +18,12 @@
 
   .app-section__title {
     display: none;
+  }
+
+  .doc-container {
+    padding: 0;
+    overflow: visible;
+    background: transparent;
   }
 
   footer {

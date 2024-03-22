@@ -256,3 +256,10 @@
 .card-b__card-description {
   margin-left: 50%;
 }
+
+
+
+@media print {
+  .page {
+    box-shadow: none;
+  }}

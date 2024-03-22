@@ -11,7 +11,9 @@ function Planilla() {
     console.log(formData);
   }, []);
   return (
-    <div className="page">
+    <div className="page" onClick={(e)=>{
+      window.print()
+    }}>
         <header className="page-header">
           <img className="page-header__img bigger-img" src={escudo} alt="" />
           <p className="page-header__text fs-8 ">
