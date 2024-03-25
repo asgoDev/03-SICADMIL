@@ -3,6 +3,8 @@ import AppSectionLayout from "../AppSectionLayout";
 import "../styles/inscripcion-militar-generator.css";
 import ComplexInput from "./ComplexInput";
 import { GlobalContext } from "../context/GlobalContext";
+import { Link } from "react-router-dom";
+
 
 function IncripcionMilitarGenerator() {
   let { isAllInputOk, setFormData } = useContext(GlobalContext);
@@ -208,7 +210,7 @@ function IncripcionMilitarGenerator() {
       id: "hijos",
       label: "Hijos",
       type: "radio",
-      options: ["Si", "No"],
+      options: ["si", "no"],
       format: "",
       required: true,
     },
@@ -216,7 +218,7 @@ function IncripcionMilitarGenerator() {
       id: "elegible",
       label: "Elegible",
       type: "radio",
-      options: ["Si", "No"],
+      options: ["si", "no"],
       format: "",
     },
     causa: { id: "causa", label: "Causa", type: "", format: "" },
@@ -232,6 +234,8 @@ function IncripcionMilitarGenerator() {
     estudia: {
       id: "isStudying",
       label: "¿Estudia?",
+      type: "radio",
+      options: ["si", "no"],
       format: "",
     },
     tipoEstudio: {
@@ -258,6 +262,8 @@ function IncripcionMilitarGenerator() {
     trabaja: {
       id: "isWorking",
       label: "¿Trabaja?",
+      type: 'radio',
+      options: ["si", "no"],
       format: "",
     },
     ocupacionOficio: {
@@ -308,6 +314,8 @@ function IncripcionMilitarGenerator() {
     instruccionPremilitar: {
       id: "preMilitaryTraining",
       label: "Instrucción Premilitar",
+      type: 'radio',
+      options:['si', 'no'],
       format: "",
     },
     nombreInstituto: {
@@ -430,6 +438,7 @@ function IncripcionMilitarGenerator() {
     for (let [key, value] of data.entries()) {
       formDataObject[key] = value;
     }
+    console.log('vamos a por ellos!');
     setFormData(formDataObject);
   };
 
@@ -669,7 +678,8 @@ function IncripcionMilitarGenerator() {
             </div>
           </section>
         </div>
-        {isAllInputOk && <input type="submit" value={"enviar"} />}
+        <Link to="/SICADMIL/preview"><input type="submit" value={"enviar"} disabled={!isAllInputOk} /></Link>
+       
       </form>
     </AppSectionLayout>
   );

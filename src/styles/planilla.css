@@ -143,10 +143,13 @@
   font-weight: 800;
   line-height: 7pt;
   position: absolute;
-  content: "x";
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.fake-check--checked::after {
+  content: "x";
 }
 
 .line-container {
