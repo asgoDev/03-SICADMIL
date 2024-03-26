@@ -1,13 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AppSectionLayout from "../AppSectionLayout";
 import "../styles/inscripcion-militar-generator.css";
 import ComplexInput from "./ComplexInput";
 import { GlobalContext } from "../context/GlobalContext";
-import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import Planilla from "./Planilla";
 
 function IncripcionMilitarGenerator() {
   let { isAllInputOk, setFormData } = useContext(GlobalContext);
+  const [formStep, setFormStep] = useState('1')
+  const navigate = useNavigate();
 
   const inputConfigPersonal = {
     ci: { id: "ci", label: "C.I.", type: "number", format: "", required: true },
@@ -262,7 +264,7 @@ function IncripcionMilitarGenerator() {
     trabaja: {
       id: "isWorking",
       label: "¿Trabaja?",
-      type: 'radio',
+      type: "radio",
       options: ["si", "no"],
       format: "",
     },
@@ -314,8 +316,8 @@ function IncripcionMilitarGenerator() {
     instruccionPremilitar: {
       id: "preMilitaryTraining",
       label: "Instrucción Premilitar",
-      type: 'radio',
-      options:['si', 'no'],
+      type: "radio",
+      options: ["si", "no"],
       format: "",
     },
     nombreInstituto: {
@@ -438,15 +440,22 @@ function IncripcionMilitarGenerator() {
     for (let [key, value] of data.entries()) {
       formDataObject[key] = value;
     }
-    console.log('vamos a por ellos!');
     setFormData(formDataObject);
+    let planilla = <Planilla />;
+    planilla.print();
+    navigate("/SICADMIL/preview");
   };
+
+  const handleSteps =(e)=>{
+    setFormStep(e.target.innerText)
+  }
 
   return (
     <AppSectionLayout title={"Planilla de Inscripción Militar"}>
+        
       <form className="form" action="#" onSubmit={handleSubmit}>
         <div className="form__section-container">
-          <section id="personal-section" className="form__section">
+          <section id="personal-section" className={`form__section ${formStep == '1' && 'form__section--onfocus'}`}>
             <h2 className="form__subtitle">1.-Información Personal</h2>
             <fieldset className="form__fieldset">
               <legend className="form__legend">Datos personales</legend>
@@ -536,13 +545,13 @@ function IncripcionMilitarGenerator() {
               <ComplexInput inputConfig={inputConfigPersonal.elegible} />
               <ComplexInput inputConfig={inputConfigPersonal.causa} />
             </fieldset>
-            <div className="botones-de-prueba">
+            {/* <div className="botones-de-prueba">
               <a href="#personal-section">Personal </a>
               <a href="#socio-econom-section">Socio </a>
               <a href="#militar-section">Militar</a>
-            </div>
+            </div> */}
           </section>
-          <section id="socio-econom-section" className="form__section">
+          <section id="socio-econom-section" className={`form__section ${formStep == '2' && 'form__section--onfocus'}`}>
             <h2 className="form__subtitle">2.-Información Socio-económica</h2>
             <fieldset className="form__fieldset">
               <legend className="form__legend">Estudios</legend>
@@ -570,13 +579,13 @@ function IncripcionMilitarGenerator() {
               />
               <ComplexInput inputConfig={inputConfigSocio.telefonoEmpresa} />
             </fieldset>
-            <div className="botones-de-prueba">
+            {/* <div className="botones-de-prueba">
               <a href="#personal-section">Personal </a>
               <a href="#socio-econom-section">Socio </a>
               <a href="#militar-section">Militar</a>
-            </div>
+            </div> */}
           </section>
-          <section id="militar-section" className="form__section">
+          <section id="militar-section" className={`form__section ${formStep == '3' && 'form__section--onfocus'}`}>
             <h2 className="form__subtitle">3.-Información Militar</h2>
             <fieldset className="form__fieldset">
               <legend className="form__legend">Instrucción Premilitar</legend>
@@ -671,16 +680,21 @@ function IncripcionMilitarGenerator() {
                 }
               />
             </fieldset>
-            <div className="botones-de-prueba">
+            {/* <div className="botones-de-prueba">
               <a href="#personal-section">Personal </a>
               <a href="#socio-econom-section">Socio </a>
               <a href="#militar-section">Militar</a>
-            </div>
+            </div> */}
           </section>
         </div>
-        <Link to="/SICADMIL/preview"><input type="submit" value={"enviar"} disabled={!isAllInputOk} /></Link>
-       
+        {/* <Link to="/SICADMIL/preview"><input type="submit" value={"enviar"} disabled={!isAllInputOk} /></Link> */}
+        {/* <input type="submit" value={"enviar"} disabled={!isAllInputOk} /> */}
       </form>
+      <div className="form__navigation">
+        <a href={`#personal-section`} className={`${formStep == '1' && 'form-step--selected'}`} onClick={handleSteps}>1</a>
+        <a href={`#socio-econom-section`} className={`${formStep == '2' && 'form-step--selected'}`} onClick={handleSteps}>2</a>
+        <a href={`#militar-section`}  className={`${formStep == '3' && 'form-step--selected'}`} onClick={handleSteps}>3</a>
+      </div>
     </AppSectionLayout>
   );
 }

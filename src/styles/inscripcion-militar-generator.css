@@ -1,5 +1,6 @@
 .form {
   width: 100%;
+  position: relative;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -10,9 +11,16 @@
 }
 
 .form__section {
+  height: 0;
+  overflow: hidden;
   flex-basis: 100%;
   padding: 0 1rem;
 }
+
+.form__section--onfocus {
+  height: 100%;
+}
+
 .form__subtitle {
   font-size: 1.2rem;
   font-weight: 500;
@@ -32,13 +40,27 @@
   padding: 0 .3rem;
 }
 
-.botones-de-prueba {
+.form__navigation {
   /* position: absolute;
-  right: 30px;
-  bottom: 30px; */
-  max-width: fit-content;
+  bottom: 0;
+  left: 0; */
+  max-width: min-content;
   margin: auto;
-  border: 1px solid var(--principal-color);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form__navigation a {
+ border-radius: 50%;
+ width: 2.1rem;
+ line-height: 2rem;
+ text-align: center;
+}
+
+.form-step--selected {
+ color: var(--bg-color);
+ background: var(--principal-color);
 }
 
 .hidden {

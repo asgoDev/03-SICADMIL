@@ -62,7 +62,6 @@
   color: var(--principal-font-color);
 }
 
-
 @media (max-width: 480px) {
   .app-header {
     /* display: none; */
@@ -75,5 +74,36 @@
 
   .app-header__img:last-child {
     display: none;
+  }
+}
+
+@media (max-width: 560px) and (orientation: portrait) {
+  .app-header__nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    background: #00000025;
+    z-index: 5;
+  }
+
+  .app-header__ul {
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    padding: 2rem;
+    background: var(--bg-color);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+  }
+  .app-header__li:first-child {
+    display: none;
+  }
+  .app-header__li {
+    flex-basis: 100%;
   }
 }
