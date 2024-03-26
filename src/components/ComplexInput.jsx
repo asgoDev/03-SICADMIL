@@ -51,7 +51,6 @@ function ComplexInput({ inputConfig = {}, width }) {
           options={options}
           value={inputValue}
           setValue={setInputValue}
-          title={title}
         />
       );
     if (type == "radio")
@@ -61,7 +60,6 @@ function ComplexInput({ inputConfig = {}, width }) {
           options={options}
           value={inputValue}
           setValue={setInputValue}
-          title={title}
         />
       );
     if (type == "file")
@@ -81,14 +79,13 @@ function ComplexInput({ inputConfig = {}, width }) {
         placeholder={label}
         value={inputValue}
         setValue={setInputValue}
-        title={title}
       />
     );
   };
 
   return (
     <label
-      className={`complex-input-label ${required && "required"}`}
+      className={`complex-input-label ${required && "required"}`} title={title}
       htmlFor={id}
     >
       <span

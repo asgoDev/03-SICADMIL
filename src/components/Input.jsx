@@ -1,5 +1,5 @@
 
-function Input({ id, type, placeholder, value, setValue, regEx, title }) {
+function Input({ id, type, placeholder, value, setValue, regEx }) {
 
   const inputControl = (e) => {
     if(!regEx) return setValue(e.target.value)
@@ -14,7 +14,6 @@ function Input({ id, type, placeholder, value, setValue, regEx, title }) {
       value={value}
       onChange={inputControl}
       autoComplete="off"
-      title={title}
     />
   );
 }

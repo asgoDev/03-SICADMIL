@@ -1,6 +1,6 @@
 import "../styles/radio.css";
 
-function Radio({ id, value, setValue, options }) {
+function Radio({ id, value, setValue, options}) {
   const inputControl = (e) =>{
     setValue(e.target.value)
   }
