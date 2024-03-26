@@ -3,8 +3,9 @@ import AppSectionLayout from "../AppSectionLayout";
 import "../styles/inscripcion-militar-generator.css";
 import ComplexInput from "./ComplexInput";
 import { GlobalContext } from "../context/GlobalContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Planilla from "./Planilla";
+
 
 function IncripcionMilitarGenerator() {
   let { isAllInputOk, setFormData } = useContext(GlobalContext);
@@ -231,7 +232,9 @@ function IncripcionMilitarGenerator() {
       id: "educationLevel",
       label: "Grado de Instrucción",
       type: "select",
+      options: ['Primaria', "Bachiller", "Técnico medio", 'TSU', 'Licenciado/a', 'Ingeniero/a', 'Magister', 'Doctor'],
       format: "",
+      required: true,
     },
     estudia: {
       id: "isStudying",
@@ -239,6 +242,7 @@ function IncripcionMilitarGenerator() {
       type: "radio",
       options: ["si", "no"],
       format: "",
+      required: true,
     },
     tipoEstudio: {
       id: "studyType",
@@ -254,6 +258,7 @@ function IncripcionMilitarGenerator() {
       id: "institution",
       label: "Institución",
       type: "select",
+      options: ["Pública", "Privada"],
       format: "",
     },
     nombreInstituto: {
@@ -267,12 +272,14 @@ function IncripcionMilitarGenerator() {
       type: "radio",
       options: ["si", "no"],
       format: "",
+      required: true,
     },
     ocupacionOficio: {
       id: "occupation",
       label: "Ocupación u Oficio",
-      type: "select",
+      type: "",
       format: "",
+      required: true,
     },
     empresa: {
       id: "company",
@@ -283,25 +290,25 @@ function IncripcionMilitarGenerator() {
       pais: {
         id: "companyCountry",
         label: "País",
-        type: "select",
+        // type: "select",
         format: "",
       },
       estado: {
         id: "companyState",
         label: "Estado",
-        type: "select",
+        // type: "select",
         format: "",
       },
       municipio: {
         id: "companyMunicipality",
         label: "Municipio",
-        type: "select",
+        // type: "select",
         format: "",
       },
       parroquia: {
         id: "companyParish",
         label: "Parroquia",
-        type: "select",
+        // type: "select",
         format: "",
       },
     },
@@ -319,6 +326,7 @@ function IncripcionMilitarGenerator() {
       type: "radio",
       options: ["si", "no"],
       format: "",
+      required: true,
     },
     nombreInstituto: {
       id: "militaryInstituteName",
@@ -329,6 +337,8 @@ function IncripcionMilitarGenerator() {
       situacionActual: {
         id: "militaryServiceStatus",
         label: "Situación Actual",
+        type: "select",
+      options: ["Activo", "Reserva"],
         format: "",
       },
       componente: {
@@ -355,11 +365,13 @@ function IncripcionMilitarGenerator() {
     fechaIngreso: {
       id: "militaryEntryDate",
       label: "Fecha de Ingreso",
+      type: "date",
       format: "dd-mm-aaaa",
     },
     fechaEgreso: {
       id: "militaryExitDate",
       label: "Fecha de Egreso",
+      type: "date",
       format: "dd-mm-aaaa",
     },
     jerarquia: {
@@ -396,11 +408,13 @@ function IncripcionMilitarGenerator() {
       fechaIngresoProfesional: {
         id: "professionalEntryDate",
         label: "Fecha de Ingreso",
+        type: "date",
         format: "dd-mm-aaaa",
       },
       fechaEgresoProfesional: {
         id: "professionalExitDate",
         label: "Fecha de Egreso",
+        type: "date",
         format: "dd-mm-aaaa",
       },
     },
@@ -428,6 +442,7 @@ function IncripcionMilitarGenerator() {
       fechaIngresoMilicia: {
         id: "militiaEntryDate",
         label: "Fecha de Ingreso",
+        type: "date",
         format: "dd-mm-aaaa",
       },
     },
@@ -441,8 +456,6 @@ function IncripcionMilitarGenerator() {
       formDataObject[key] = value;
     }
     setFormData(formDataObject);
-    let planilla = <Planilla />;
-    planilla.print();
     navigate("/SICADMIL/preview");
   };
 
@@ -565,6 +578,7 @@ function IncripcionMilitarGenerator() {
               <legend className="form__legend">Laboral</legend>
               <ComplexInput inputConfig={inputConfigSocio.trabaja} />
               <ComplexInput inputConfig={inputConfigSocio.ocupacionOficio} />
+              <ComplexInput inputConfig={inputConfigSocio.empresa} />
               <ComplexInput
                 inputConfig={inputConfigSocio.direccionEmpresa.pais}
               />
@@ -680,15 +694,10 @@ function IncripcionMilitarGenerator() {
                 }
               />
             </fieldset>
-            {/* <div className="botones-de-prueba">
-              <a href="#personal-section">Personal </a>
-              <a href="#socio-econom-section">Socio </a>
-              <a href="#militar-section">Militar</a>
-            </div> */}
+            <input className="form__submit" type="submit" value={"Generar planilla"} disabled={!isAllInputOk} />
+             {/* <Link to="/SICADMIL/preview"><input className="form__submit" type="submit" value={"Generar planilla"} disabled={!isAllInputOk} /></Link> */}
           </section>
         </div>
-        {/* <Link to="/SICADMIL/preview"><input type="submit" value={"enviar"} disabled={!isAllInputOk} /></Link> */}
-        {/* <input type="submit" value={"enviar"} disabled={!isAllInputOk} /> */}
       </form>
       <div className="form__navigation">
         <a href={`#personal-section`} className={`${formStep == '1' && 'form-step--selected'}`} onClick={handleSteps}>1</a>
