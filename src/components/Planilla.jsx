@@ -59,7 +59,7 @@ function Planilla() {
         <span className="table-cell span-4">
           FECHA DE NACIMIENTO: {formData.birthdate}
         </span>
-        <span className="table-cell span-3">{formData.rif}</span>
+        <span className="table-cell span-3">RIF: {formData.rif}</span>
         <span className="table-cell span-3">
           EDO. CIVIL: {formData.edoCivil}
         </span>
@@ -198,7 +198,7 @@ function Planilla() {
         <span className="table-cell span-12">
           área de defensa integral: {formData.integralDefenseArea}
         </span>
-        <span className="table-cell span-12">cuerpo de combate: {formData.combatantCorps}</span>
+        <span className="table-cell span-12">cuerpo combatiente: {formData.combatantCorps}</span>
         <span className="table-cell span-12">
           batallón de milicia: {formData.militiaBattalion}
         </span>

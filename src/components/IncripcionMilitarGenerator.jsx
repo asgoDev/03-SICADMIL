@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AppSectionLayout from "../AppSectionLayout";
 import "../styles/inscripcion-militar-generator.css";
 import ComplexInput from "./ComplexInput";
@@ -12,6 +12,14 @@ function IncripcionMilitarGenerator() {
   let { isAllInputOk, setFormData } = useContext(GlobalContext);
   const [formStep, setFormStep] = useState('1')
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    // crear funcion que me enfoque el primer section del form al actualizar la pagina
+    // if (formStep == '1'){
+    //   let button = document.querySelector('.form-step--first')
+    //   button.click()
+    // }
+  }, [])
 
 
   const handleSubmit = (e) => {
@@ -129,6 +137,8 @@ function IncripcionMilitarGenerator() {
               <a href="#socio-econom-section">Socio </a>
               <a href="#militar-section">Militar</a>
             </div> */}
+            <p className="form__advise">Todos los campos marcados con asterisco (<span className="form__advise-span">*</span>) son obligatorios</p>
+
           </section>
           <section id="socio-econom-section" className={`form__section ${formStep == '2' && 'form__section--onfocus'}`}>
             <h2 className="form__subtitle">2.-Información Socio-económica</h2>
@@ -159,11 +169,7 @@ function IncripcionMilitarGenerator() {
               />
               <ComplexInput inputConfig={inputConfigSocio.telefonoEmpresa} />
             </fieldset>
-            {/* <div className="botones-de-prueba">
-              <a href="#personal-section">Personal </a>
-              <a href="#socio-econom-section">Socio </a>
-              <a href="#militar-section">Militar</a>
-            </div> */}
+            <p className="form__advise">Todos los campos marcados con asterisco (<span className="form__advise-span">*</span>) son obligatorios</p>
           </section>
           <section id="militar-section" className={`form__section ${formStep == '3' && 'form__section--onfocus'}`}>
             <h2 className="form__subtitle">3.-Información Militar</h2>
@@ -256,13 +262,15 @@ function IncripcionMilitarGenerator() {
                 }
               />
             </fieldset>
+            <p className="form__advise">Todos los campos marcados con asterisco (<span className="form__advise-span">*</span>) son obligatorios</p>
+
             <input className="form__submit" type="submit" value={"Generar planilla"} disabled={!isAllInputOk} />
              {/* <Link to="/SICADMIL/preview"><input className="form__submit" type="submit" value={"Generar planilla"} disabled={!isAllInputOk} /></Link> */}
           </section>
         </div>
       </form>
       <div className="form__navigation">
-        <a href={`#personal-section`} className={`${formStep == '1' && 'form-step--selected'}`} onClick={handleSteps}>1</a>
+        <a href={`#personal-section`} className={`form-step--first ${formStep == '1' && 'form-step--selected'}`} onClick={handleSteps}>1</a>
         <a href={`#socio-econom-section`} className={`${formStep == '2' && 'form-step--selected'}`} onClick={handleSteps}>2</a>
         <a href={`#militar-section`}  className={`${formStep == '3' && 'form-step--selected'}`} onClick={handleSteps}>3</a>
       </div>
