@@ -13,23 +13,18 @@ function Planilla() {
 
   const yesNoCheckboxGenerator = (value) => {
     let options = ["si", "no"];
-    return  options.map((option, i) => (
+    return options.map((option, i) => (
       <span key={i}>
-        {option}{' '} 
+        {option}{" "}
         <span
           className={`fake-check ${value == option && "fake-check--checked"}`}
-        ></span>{' '}
+        ></span>{" "}
       </span>
     ));
   };
 
   return (
-    <div
-      className="page"
-      onClick={(e) => {
-        window.print();
-      }}
-    >
+    <div className="page">
       <header className="page-header">
         <img className="page-header__img bigger-img" src={escudo} alt="" />
         <p className="page-header__text fs-8 ">
@@ -151,18 +146,33 @@ function Planilla() {
         <span className="table-cell span-9">
           nombre del instituto: {formData.instituteName}
         </span>
-        <span className="table-cell span-3">trabaja: {yesNoCheckboxGenerator(formData.isWorking)}</span>
-        <span className="table-cell span-4">ocupación u oficio: {formData.occupation}</span>
+        <span className="table-cell span-3">
+          trabaja: {yesNoCheckboxGenerator(formData.isWorking)}
+        </span>
+        <span className="table-cell span-4">
+          ocupación u oficio: {formData.occupation}
+        </span>
         <span className="table-cell span-5">empresa: {formData.company}</span>
         <span className="table-cell table-subtitle">dirección empresa: </span>
-        <span className="table-cell span-6">pais: {formData.companyCountry}</span>
-        <span className="table-cell span-6">estado: {formData.companyState}</span>
-        <span className="table-cell span-6">municipio: {formData.companyMunicipality}</span>
-        <span className="table-cell span-6">parroquia: {formData.companyParish}</span>
-        <span className="table-cell span-6">teléfono: {formData.companyPhone}</span>
+        <span className="table-cell span-6">
+          pais: {formData.companyCountry}
+        </span>
+        <span className="table-cell span-6">
+          estado: {formData.companyState}
+        </span>
+        <span className="table-cell span-6">
+          municipio: {formData.companyMunicipality}
+        </span>
+        <span className="table-cell span-6">
+          parroquia: {formData.companyParish}
+        </span>
+        <span className="table-cell span-6">
+          teléfono: {formData.companyPhone}
+        </span>
         <div className="table-title span-12">3. información militar</div>
         <span className="table-cell table-subtitle">
-          instrucción Premilitar: {yesNoCheckboxGenerator(formData.preMilitaryTraining)}
+          instrucción Premilitar:{" "}
+          {yesNoCheckboxGenerator(formData.preMilitaryTraining)}
         </span>
         <span className="table-cell span-12">
           Nombre del instituto: {formData.militaryInstituteName}
@@ -171,38 +181,74 @@ function Planilla() {
           servicio militar: (solo para ser llenado por tropa alistada y reserva
           militar)
         </span>
-        <span className="table-cell span-4">situación actual: {formData.militaryServiceStatus}</span>
-        <span className="table-cell span-4">componente: {formData.militaryServiceComponent}</span>
-        <span className="table-cell span-4">unidad: {formData.militaryServiceUnit}</span>
-        <span className="table-cell span-6">área de desempeño: {formData.performanceArea}</span>
-        <span className="table-cell span-6">especialidad: {formData.militarySpecialization}</span>
-        <span className="table-cell span-4">fecha de ingreso: {formData.militaryEntryDate}</span>
-        <span className="table-cell span-4">fecha de egreso: {formData.militaryExitDate}</span>
-        <span className="table-cell span-4">jerarquía: {formData.militaryRank}</span>
+        <span className="table-cell span-4">
+          situación actual: {formData.militaryServiceStatus}
+        </span>
+        <span className="table-cell span-4">
+          componente: {formData.militaryServiceComponent}
+        </span>
+        <span className="table-cell span-4">
+          unidad: {formData.militaryServiceUnit}
+        </span>
+        <span className="table-cell span-6">
+          área de desempeño: {formData.performanceArea}
+        </span>
+        <span className="table-cell span-6">
+          especialidad: {formData.militarySpecialization}
+        </span>
+        <span className="table-cell span-4">
+          fecha de ingreso: {formData.militaryEntryDate}
+        </span>
+        <span className="table-cell span-4">
+          fecha de egreso: {formData.militaryExitDate}
+        </span>
+        <span className="table-cell span-4">
+          jerarquía: {formData.militaryRank}
+        </span>
         <span className="table-cell table-subtitle">
           profesional militar: (solo para ser llenado por profesionales
           militares y reserva activa)
         </span>
-        <span className="table-cell span-4">situación actual: {formData.militaryProfessionalStatus}</span>
-        <span className="table-cell span-4">componente: {formData.militaryProfessionalComponent}</span>
-        <span className="table-cell span-4">categoría: {formData.militaryProfessionalCategory}</span>
-        <span className="table-cell span-6">especialidad: {formData.professionalSpecialization}</span>
-        <span className="table-cell span-6">grado: {formData.militaryProfessionalGrade}</span>
-        <span className="table-cell span-4">fecha de ingreso: {formData.professionalEntryDate}</span>
-        <span className="table-cell span-4">fecha de egreso: {formData.professionalExitDate}</span>
+        <span className="table-cell span-4">
+          situación actual: {formData.militaryProfessionalStatus}
+        </span>
+        <span className="table-cell span-4">
+          componente: {formData.militaryProfessionalComponent}
+        </span>
+        <span className="table-cell span-4">
+          categoría: {formData.militaryProfessionalCategory}
+        </span>
+        <span className="table-cell span-6">
+          especialidad: {formData.professionalSpecialization}
+        </span>
+        <span className="table-cell span-6">
+          grado: {formData.militaryProfessionalGrade}
+        </span>
+        <span className="table-cell span-4">
+          fecha de ingreso: {formData.professionalEntryDate}
+        </span>
+        <span className="table-cell span-4">
+          fecha de egreso: {formData.professionalExitDate}
+        </span>
         <span className="table-cell table-subtitle">
           milicia bolivariana: (solo para ser llenado por ciudadanos de
           categoría de milicia)
         </span>
-        <span className="table-cell span-12">grado/jerarquía: {formData.militiaRank}</span>
+        <span className="table-cell span-12">
+          grado/jerarquía: {formData.militiaRank}
+        </span>
         <span className="table-cell span-12">
           área de defensa integral: {formData.integralDefenseArea}
         </span>
-        <span className="table-cell span-12">cuerpo combatiente: {formData.combatantCorps}</span>
+        <span className="table-cell span-12">
+          cuerpo combatiente: {formData.combatantCorps}
+        </span>
         <span className="table-cell span-12">
           batallón de milicia: {formData.militiaBattalion}
         </span>
-        <span className="table-cell span-12">fecha de ingreso: {formData.militiaEntryDate}</span>
+        <span className="table-cell span-12">
+          fecha de ingreso: {formData.militiaEntryDate}
+        </span>
       </div>
       <div className="line-container">
         <img src={scisors} alt="" />
@@ -236,8 +282,12 @@ function Planilla() {
               </p>
               <p className="card__item">pais: {formData.paisDomicilio}</p>
               <p className="card__item">estado: {formData.estadoDomicilio}</p>
-              <p className="card__item">municipio: {formData.municipioDomicilio}</p>
-              <p className="card__item">parroquia: {formData.parroquiaDomicilio}</p>
+              <p className="card__item">
+                municipio: {formData.municipioDomicilio}
+              </p>
+              <p className="card__item">
+                parroquia: {formData.parroquiaDomicilio}
+              </p>
             </div>
             <div className="card__picture">
               <img src={formData.picture} alt="" />
@@ -246,7 +296,9 @@ function Planilla() {
         </div>
         <div className="card-b border-left">
           <p className="card__subtitle">Información socioeconómica:</p>
-          <p className="card__item">grado de instrucción: {formData.educationLevel}</p>
+          <p className="card__item">
+            grado de instrucción: {formData.educationLevel}
+          </p>
           <p className="card__item">ocupación: {formData.occupation}</p>
           <p className="card__item">empresa: {formData.company}</p>
           <div className="card-b__militar-info">

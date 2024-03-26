@@ -43,7 +43,7 @@ fieldset {
 }
 
 input,
-select {
+select, button {
   position: relative;
   height: 100%;
   padding: 0.3rem 0.7rem;
@@ -79,7 +79,6 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
 
 @media (max-width: 389px) {
   html {
