@@ -1,5 +1,5 @@
 
-function Input({ id, type, placeholder, value, setValue, regEx }) {
+function Input({ id, type, placeholder, value, setValue, regEx, title }) {
 
   const inputControl = (e) => {
     if(!regEx) return setValue(e.target.value)
@@ -14,7 +14,7 @@ function Input({ id, type, placeholder, value, setValue, regEx }) {
       value={value}
       onChange={inputControl}
       autoComplete="off"
-      title={`${'Indique con una X si recibió o no instrucción premilitar'}`}
+      title={title}
     />
   );
 }

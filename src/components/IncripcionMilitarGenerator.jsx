@@ -186,17 +186,13 @@ function IncripcionMilitarGenerator() {
               <ComplexInput
                 inputConfig={inputConfigMilitar.servicioMilitar.unidad}
               />
-            </fieldset>
-
-            <fieldset className="form__fieldset">
-              <legend className="form__legend">Área Militar</legend>
-              <ComplexInput inputConfig={inputConfigMilitar.areaDesempeno} />
+              <ComplexInput inputConfig={inputConfigMilitar.servicioMilitar.areaDesempeno} />
               <ComplexInput
-                inputConfig={inputConfigMilitar.especialidadMilitar}
+                inputConfig={inputConfigMilitar.servicioMilitar.especialidadMilitar}
               />
-              <ComplexInput inputConfig={inputConfigMilitar.fechaIngreso} />
-              <ComplexInput inputConfig={inputConfigMilitar.fechaEgreso} />
-              <ComplexInput inputConfig={inputConfigMilitar.jerarquia} />
+              <ComplexInput inputConfig={inputConfigMilitar.servicioMilitar.fechaIngreso} />
+              <ComplexInput inputConfig={inputConfigMilitar.servicioMilitar.fechaEgreso} />
+              <ComplexInput inputConfig={inputConfigMilitar.servicioMilitar.jerarquia} />
             </fieldset>
 
             <fieldset className="form__fieldset">

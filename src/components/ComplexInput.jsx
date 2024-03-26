@@ -13,6 +13,7 @@ function ComplexInput({ inputConfig = {}, width }) {
     type = "text",
     options = [],
     required,
+    title,
   } = inputConfig;
   const [inputValue, setInputValue] = useState("");
   const { requiredInputs, setRequiredInputs } = useContext(GlobalContext);
@@ -50,6 +51,7 @@ function ComplexInput({ inputConfig = {}, width }) {
           options={options}
           value={inputValue}
           setValue={setInputValue}
+          title={title}
         />
       );
     if (type == "radio")
@@ -59,6 +61,7 @@ function ComplexInput({ inputConfig = {}, width }) {
           options={options}
           value={inputValue}
           setValue={setInputValue}
+          title={title}
         />
       );
     if (type == "file")
@@ -78,6 +81,7 @@ function ComplexInput({ inputConfig = {}, width }) {
         placeholder={label}
         value={inputValue}
         setValue={setInputValue}
+        title={title}
       />
     );
   };
