@@ -19,6 +19,7 @@ function DocPreView() {
         <button className="doc-preview__btn" onClick={handlePrintBtn}>
           <img src={print} alt="" />
         </button>
+        {/* falta crear funcion de editar */}
         <button className="doc-preview__btn" onClick={handlePrintBtn}>
           <img src={pencil} alt="" />
         </button>
