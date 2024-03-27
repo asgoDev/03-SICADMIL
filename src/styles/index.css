@@ -54,13 +54,26 @@ select, button {
   z-index: 2;
   outline: none;
   border-radius: var(--input-radius);
-  background-color: var(--bg-color);
-  border: var(--input-border);
+
+  /* Version 1*/
+  background-color: var(--bg-color); 
+  border: var(--input-border); 
+
+  /* Version 2*/
+  /* background-color: #fff;
+  border: none;
+  border-bottom:  var(--input-border);  */
 }
 
 input:focus, select:focus {
+  /* Version 1*/
   border-color: var(--principal-color);
   box-shadow: 0 0 3px -1px var(--principal-color);
+
+  /* Version 2*/
+  /* box-shadow: none;
+  border-bottom-width: 2px; */
+
 }
 
 .invalid-input {
