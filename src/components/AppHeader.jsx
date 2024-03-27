@@ -21,9 +21,9 @@ function AppHeader() {
           <li className="app-header__li">
             <Link to="/SICADMIL/inscripcion-militar-form">Planilla de Incripción Militar</Link>
           </li>
-          <li className="app-header__li">
-            <Link to="/SICADMIL/contacto">Contacto</Link>
-          </li>
+          {/* <li className="app-header__li">
+            <Link to="/SICADMIL/info">Info</Link>
+          </li> */}
           {/* <li className="app-header__li">
             <Link to="/SICADMIL/preview">Preview</Link>
           </li> */}
