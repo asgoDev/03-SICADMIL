@@ -180,6 +180,10 @@
   font-size: 6pt;
 }
 
+.card-a {
+/* max-height: 150px; */
+}
+
 .card__title {
   text-align: center;
 }
@@ -191,15 +195,21 @@
 
 .card__principal-data {
   flex-grow: 1;
+
 }
 
 .card__picture {
   border: 2px solid #000000;
   flex-basis: 30%;
   position: relative;
+  height: 120px;
 }
 
-.card__picture::after {
+.card__picture > img {
+  object-fit: cover;
+}
+
+.card__picture--after::after {
   position: absolute;
   content: "foto";
   font-size: 8pt;

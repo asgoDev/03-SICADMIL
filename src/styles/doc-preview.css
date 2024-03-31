@@ -20,7 +20,8 @@
 .doc-preview__btn {  
   padding: .5rem;
   width: 3rem;
-  aspect-ratio: 1/1;
+  height: 3rem;
+  /* aspect-ratio: 1/1; */
   border-width: 5px;
   border-radius: 50%;
   outline: 2px solid var(--principal-color);
