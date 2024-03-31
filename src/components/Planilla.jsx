@@ -1,15 +1,18 @@
 import escudo from "../assets/escudo.png";
 import escudo2 from "../assets/escudo2.png";
 import scisors from "../assets/scisors.png";
-import React, { createElement, useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import "../styles/planilla.css";
 
 function Planilla() {
   const { isAllInputsOk, formData } = useContext(GlobalContext);
+  const [date, setDate] = useState('hoy')
+  
   useEffect(() => {
-    console.log(formData);
-  }, []);
+    let today = new Date().toLocaleDateString('es-ES', { year:"numeric", month:"short", day:"numeric"}) 
+    setDate(today.replace(/ /g, ""))
+  },[]);
 
   const yesNoCheckboxGenerator = (value) => {
     let options = ["si", "no"];
@@ -40,7 +43,7 @@ function Planilla() {
         REGISTRO PARA LA DEFENSA INTEGRAL DE PERSONA NATURAL
       </h2>
       <p className="page-date fs-8 bolder">
-        FECHA EMISIÓN: {formData.birthdate}
+        FECHA EMISIÓN: {date}
       </p>
       <div className="table">
         <div className="table-title span-8">1. INFORMACIÓN PERSONAL</div>
@@ -320,7 +323,7 @@ function Planilla() {
             este carnet solo será válido con sello <br /> húmedo y número de
             registro.
           </p>
-          <p className="card-b__card-description">fecha emisión: 01mar2024 </p>
+          <p className="card-b__card-description">fecha emisión: {date} </p>
           <p className="card-b__card-description">nro. registro:</p>
         </div>
       </div>
