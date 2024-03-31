@@ -1,4 +1,6 @@
-import mindef from "../assets/mindef.jpg";
+import bandera from "../assets/bandera.jpg";
+import gobbol from "../assets/gobbol.jpg";
+import mindeftext from "../assets/mindeftext.jpg";
 import bnaval from "../assets/bnaval.jpg";
 import "../styles/app-header.css";
 import { Link } from "react-router-dom";
@@ -13,9 +15,13 @@ function AppHeader() {
 
   return (
     <header className="app-header">
-      <div className="app-header__img-cont">
-        <img className="app-header__img" src={mindef} alt="mindef" />
-        <img className="app-header__img" src={bnaval} alt="bnaval" />
+      <div className="app-header__img-container">
+        <div className="app-header__left-panel">
+          <img className="app-header__img app-header__img--bandera" src={bandera} alt="mindef" />
+          <img className="app-header__img app-header__img--gobbol" src={gobbol} alt="mindef" />
+          <img className="app-header__img app-header__img--mindeftext" src={mindeftext} alt="mindef" />
+        </div>
+        <img className="app-header__img app-header__img--bnaval" src={bnaval} alt="bnaval" />
       </div>
       <nav className="app-header__nav">
         <label className="header__ico-menu-label" htmlFor="header__menu-btn">

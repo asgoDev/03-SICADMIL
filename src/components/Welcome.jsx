@@ -4,7 +4,8 @@ import AppSectionLayout from "../AppSectionLayout";
 function Welcome() {
   return (
     <AppSectionLayout title={"Bienvenido"}>
-      {/* <p>Este sistema tiene como propósito ayudar en los procesos de captación de nuevas tropas que quieran mantener y defender activamente la Soberanía y Seguridad Nacional; así como tambíen agilizar los procesos administrativos que se llevan a cabo en los diferentes cuarteles a lo largo y ancho de nuestro territorio. </p>
+      {/* <p>Bienvenido al Sistema de Captación y Administración Militar</p>
+      <p>Este sistema tiene como propósito ayudar en los procesos de captación de nuevas tropas que quieran mantener y defender activamente la Soberanía y Seguridad Nacional; así como tambíen agilizar los procesos administrativos que se llevan a cabo en los diferentes cuarteles a lo largo y ancho de nuestro territorio. </p>
       <br />
       <p>Selecciona una opción del menú para comenzar.</p> */}
       {/* // V2 */}
