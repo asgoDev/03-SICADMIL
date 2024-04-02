@@ -1,6 +1,8 @@
 .app-header {
   background: var(--principal-color);
   --img-height: 80px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+
 }
 
 .app-header__img-container {

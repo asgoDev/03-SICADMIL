@@ -37,6 +37,7 @@
 .page-title {
   text-align: center;
   line-height: 23pt;
+  font-family: inherit;
 }
 
 .page-date {
@@ -199,7 +200,6 @@
 }
 
 .card__picture {
-  border: 2px solid #000000;
   flex-basis: 30%;
   position: relative;
   height: 120px;
@@ -209,7 +209,11 @@
   object-fit: cover;
 }
 
-.card__picture--after::after {
+.card__picture--empty {
+  border: 1px solid #000000;
+}
+
+.card__picture--empty::after {
   position: absolute;
   content: "foto";
   font-size: 8pt;

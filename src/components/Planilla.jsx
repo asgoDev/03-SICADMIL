@@ -292,7 +292,7 @@ function Planilla() {
                 parroquia: {formData.parroquiaDomicilio}
               </p>
             </div>
-            <div className={`card__picture ${ !formData.picture ? 'card__picture--after':''}`}>
+            <div className={`card__picture ${ !formData.picture ? 'card__picture--empty':''}`}>
               <img src={formData.picture ? URL.createObjectURL(formData.picture):''} alt="" />
             </div>
           </div>
