@@ -11,7 +11,7 @@ export const inputConfigPersonal = {
   },
   nombre: {
     id: "name",
-    label: "Nombre",
+    label: "Nombres",
     type: "",
     title: "",
     format: "",
@@ -21,7 +21,7 @@ export const inputConfigPersonal = {
   },
   apellido: {
     id: "lastname",
-    label: "Apellido",
+    label: "Apellidos",
     type: "",
     title:
       "Deberá colocar los nombres completos que aparecen en su cedula de identidad.",

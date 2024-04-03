@@ -2,7 +2,10 @@ import escudo from "../assets/escudo.png";
 import escudo2 from "../assets/escudo2.png";
 import scisors from "../assets/scisors.png";
 import { useContext, useEffect, useState } from "react";
+import {newDate} from "../utils/newDate";
 import { GlobalContext } from "../context/GlobalContext";
+
+
 import "../styles/planilla.css";
 
 function Planilla() {
@@ -10,8 +13,7 @@ function Planilla() {
   const [date, setDate] = useState('hoy')
   
   useEffect(() => {
-    let today = new Date().toLocaleDateString('es-ES', { year:"numeric", month:"short", day:"numeric"}) 
-    setDate(today.replace(/ /g, ""))
+    setDate(newDate().todayShort())
   },[]);
 
   const yesNoCheckboxGenerator = (value) => {
@@ -55,7 +57,7 @@ function Planilla() {
         <span className="table-cell span-5">NOMBRES: {formData.name}</span>
         <span className="table-cell span-2">SEXO: {formData.sex}</span>
         <span className="table-cell span-4">
-          FECHA DE NACIMIENTO: {formData.birthdate}
+          FECHA DE NACIMIENTO: {newDate(formData.birthdate).toLong()}
         </span>
         <span className="table-cell span-3">RIF: {formData.rif}</span>
         <span className="table-cell span-3">
@@ -67,7 +69,7 @@ function Planilla() {
         <span className="table-cell span-4">
           NRO. GACETA: {formData.nroGaceta}
         </span>
-        <span className="table-cell span-2">FECHA: {formData.fechaGaceta}</span>
+        <span className="table-cell span-2">FECHA: {newDate(formData.fechaGaceta).toLong()}</span>
         <span className="table-cell table-subtitle">Lugar de nacimiento:</span>
         <span className="table-cell span-3">
           pais: {formData.paisNacimiento}
@@ -200,10 +202,10 @@ function Planilla() {
           especialidad: {formData.militarySpecialization}
         </span>
         <span className="table-cell span-4">
-          fecha de ingreso: {formData.militaryEntryDate}
+          fecha de ingreso: {newDate(formData.militaryEntryDate).toLong()}
         </span>
         <span className="table-cell span-4">
-          fecha de egreso: {formData.militaryExitDate}
+          fecha de egreso: {newDate(formData.militaryExitDate).toLong()}
         </span>
         <span className="table-cell span-4">
           jerarquía: {formData.militaryRank}
@@ -228,10 +230,10 @@ function Planilla() {
           grado: {formData.militaryProfessionalGrade}
         </span>
         <span className="table-cell span-4">
-          fecha de ingreso: {formData.professionalEntryDate}
+          fecha de ingreso: {newDate(formData.professionalEntryDate).toLong()}
         </span>
         <span className="table-cell span-4">
-          fecha de egreso: {formData.professionalExitDate}
+          fecha de egreso: {newDate(formData.professionalExitDate).toLong()}
         </span>
         <span className="table-cell table-subtitle">
           milicia bolivariana: (solo para ser llenado por ciudadanos de
@@ -250,7 +252,7 @@ function Planilla() {
           batallón de milicia: {formData.militiaBattalion}
         </span>
         <span className="table-cell span-12">
-          fecha de ingreso: {formData.militiaEntryDate}
+          fecha de ingreso: {newDate(formData.militiaEntryDate).toLong()}
         </span>
       </div>
       <div className="line-container">

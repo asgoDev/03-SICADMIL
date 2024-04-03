@@ -5,7 +5,6 @@ import ComplexInput from "./ComplexInput";
 import { GlobalContext } from "../context/GlobalContext";
 import { useNavigate, Link } from "react-router-dom";
 import { inputConfigPersonal, inputConfigSocio, inputConfigMilitar } from '../data/formConfig'
-import Planilla from "./Planilla";
 
 
 function IncripcionMilitarGenerator() {
