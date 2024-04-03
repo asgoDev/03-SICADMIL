@@ -2,19 +2,17 @@ import escudo from "../assets/escudo.png";
 import escudo2 from "../assets/escudo2.png";
 import scisors from "../assets/scisors.png";
 import { useContext, useEffect, useState } from "react";
-import {newDate} from "../utils/newDate";
+import { newDate } from "../utils/newDate";
 import { GlobalContext } from "../context/GlobalContext";
-
-
 import "../styles/planilla.css";
 
 function Planilla() {
   const { isAllInputsOk, formData } = useContext(GlobalContext);
-  const [date, setDate] = useState('hoy')
-  
+  const [date, setDate] = useState("hoy");
+
   useEffect(() => {
-    setDate(newDate().todayShort())
-  },[]);
+    setDate(newDate().todayShort());
+  }, []);
 
   const yesNoCheckboxGenerator = (value) => {
     let options = ["si", "no"];
@@ -26,6 +24,23 @@ function Planilla() {
         ></span>{" "}
       </span>
     ));
+  };
+
+  const setMilitarInfo = (array) => {
+    const militarInfo = [
+      {tag:  "militar profesional", source: formData.militaryProfessionalStatus},
+      {tag:  "miliciano", source: formData.militiaRank},
+      {tag:  "reservista", source: formData.militaryServiceStatus},
+      {tag:  "ninguna", source: !(formData.militaryServiceStatus || formData.militaryProfessionalStatus || formData.militiaRank) },      
+    ];
+
+    return militarInfo.map((item, i) => (
+      <p key={i} className="card__item">
+        {item.tag}:{" "}
+        <span className={`fake-check ${ item.source ? "fake-check--checked" : null}`}></span>
+      </p>
+    ))
+
   };
 
   return (
@@ -44,9 +59,7 @@ function Planilla() {
       <h2 className="page-title fs-9">
         REGISTRO PARA LA DEFENSA INTEGRAL DE PERSONA NATURAL
       </h2>
-      <p className="page-date fs-8 bolder">
-        FECHA EMISIÓN: {date}
-      </p>
+      <p className="page-date fs-8 bolder">FECHA EMISIÓN: {date}</p>
       <div className="table">
         <div className="table-title span-8">1. INFORMACIÓN PERSONAL</div>
         <div className="table-title span-4 border-left">NRO. REGISTRO</div>
@@ -69,7 +82,9 @@ function Planilla() {
         <span className="table-cell span-4">
           NRO. GACETA: {formData.nroGaceta}
         </span>
-        <span className="table-cell span-2">FECHA: {newDate(formData.fechaGaceta).toLong()}</span>
+        <span className="table-cell span-2">
+          FECHA: {newDate(formData.fechaGaceta).toLong()}
+        </span>
         <span className="table-cell table-subtitle">Lugar de nacimiento:</span>
         <span className="table-cell span-3">
           pais: {formData.paisNacimiento}
@@ -294,8 +309,14 @@ function Planilla() {
                 parroquia: {formData.parroquiaDomicilio}
               </p>
             </div>
-            <div className={`card__picture ${ !formData.picture ? 'card__picture--empty':''}`}>
-              <img src={formData.picture ? URL.createObjectURL(formData.picture):''} alt="" />
+            <div
+              className={`card__picture ${
+                !formData.picture ? "card__picture--empty" : ""
+              }`}
+            >
+              {formData.picture && (
+                <img src={URL.createObjectURL(formData.picture)} alt=" " />
+              )}
             </div>
           </div>
         </div>
@@ -308,18 +329,7 @@ function Planilla() {
           <p className="card__item">empresa: {formData.company}</p>
           <div className="card-b__militar-info">
             <p className="card__subtitle margin-top">Información Militar:</p>
-            <p className="card__item">
-              militar profesional: <span className="fake-check"></span>
-            </p>
-            <p className="card__item">
-              miliciano: <span className="fake-check"></span>
-            </p>
-            <p className="card__item">
-              reservista: <span className="fake-check"></span>
-            </p>
-            <p className="card__item">
-              ninguna: <span className="fake-check"></span>
-            </p>
+            {setMilitarInfo()}
           </div>
           <p className="card__subtitle card-b__warning margin-top">
             este carnet solo será válido con sello <br /> húmedo y número de
