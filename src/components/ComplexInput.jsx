@@ -1,21 +1,19 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import { ComplexInputContext } from "../context/ComplexInputContext";
 import "../styles/complex-input.css";
 import Input from "./Input";
 import Select from "./Select";
 import Radio from "./Radio";
 import InputFile from "./InputFile";
 
-function ComplexInput({ inputConfig = {}, width }) {
-  const {
-    id,
-    label = "label",
-    type = "text",
-    options = [],
-    required,
-    title,
-  } = inputConfig;
-  const [inputValue, setInputValue] = useState("");
+
+function ComplexInput() {
+  const {inputConfig, inputState} = useContext(ComplexInputContext)
+  const {required, title, id, type, label, options} = inputConfig
+  const [inputValue, setInputValue] = inputState
+
+
   const { requiredInputs, setRequiredInputs } = useContext(GlobalContext);
 
   useEffect(() => {
@@ -27,21 +25,7 @@ function ComplexInput({ inputConfig = {}, width }) {
       });
     }
   }, [inputValue]);
-
-  // const formatInput = (e) => {
-
-  //   let value = e.target.value;
-  //   // Quitar cualquier caracter que no sea un número
-  //   value = value.replace(/[^0-9]/g, "");
-
-  //   // Aplicar el formato V##.###.###
-  //   if (value.length > 3) {
-  //     // value = "V" + value.replace(/(\d{2})(\d{3})(\d{3})/, "$1.$2.$3");
-  //     value = "V" + value.replace(/(\d{2})(\d{3})(\d{3})/, "$1.$2.$3");
-  //   }
-  //   // Establecer el value formateado en el input
-  //   setInputValue(value);
-  // };
+  
 
   const chooseElement = () => {
     if (type == "select")

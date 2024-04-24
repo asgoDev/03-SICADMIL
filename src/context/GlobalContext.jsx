@@ -18,6 +18,7 @@ function GlobalContextProvider(props) {
   useEffect(()=>{
     setIsAllInputOk(checkImportantInput(requiredInputs))
   }, [requiredInputs])
+  
 
 
   return (

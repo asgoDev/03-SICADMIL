@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import ComplexInput from "./ComplexInput";
+import ComplexInputContextProvider from "../context/ComplexInputContext";
 
 const FormFieldset = ({ fieldsetConfigData }) => {
   const { fieldsetName, inputList } = fieldsetConfigData;
@@ -9,7 +10,11 @@ const FormFieldset = ({ fieldsetConfigData }) => {
     <fieldset className="form__fieldset">
       <legend className="form__legend">{fieldsetName}</legend>
       {inputList.map((inputConfig, i) => {
-        return <ComplexInput key={i} inputConfig={inputConfig} />;
+        return (
+          <ComplexInputContextProvider inputConfig={inputConfig} key={i}>
+            <ComplexInput />
+          </ComplexInputContextProvider>
+        );
       })}
     </fieldset>
   );
@@ -20,7 +25,12 @@ const FormSection = ({ sectionConfigData, formScrollController, index }) => {
   const { id, title, config, submit } = sectionConfigData;
 
   return (
-    <section id={id} className={`form__section ${formScrollController == (index + 1) && 'form__section--onfocus'}`}>
+    <section
+      id={id}
+      className={`form__section ${
+        formScrollController == index + 1 && "form__section--onfocus"
+      }`}
+    >
       <h2 className="form__subtitle">{title}</h2>
       {config.map((fieldsetConfig, i) => {
         return <FormFieldset key={i} fieldsetConfigData={fieldsetConfig} />;
