@@ -1,9 +1,12 @@
+import { useContext } from "react";
+import { ComplexInputContext } from "../context/ComplexInputContext";
 import "../styles/input-file.css";
 import camera from "../assets/camera.png";
-import { useEffect } from "react";
 
-function InputFile({ id, type, placeholder, value, setValue }) {
-
+function InputFile() {
+  const { inputConfig, inputState } = useContext(ComplexInputContext);
+  const { id, type, label } = inputConfig;
+  const [value, setValue] = inputState
 
   const inputControl = (e) => {
     setValue((e.target.files[0]))
@@ -23,7 +26,7 @@ function InputFile({ id, type, placeholder, value, setValue }) {
         name={id}
         type={type}
         accept="image/*"
-        placeholder={placeholder}
+        placeholder={label}
         onChange={inputControl}
         title={`${"Tome una fotografía desde su celular o seleccione de su galeria"}`}
       />

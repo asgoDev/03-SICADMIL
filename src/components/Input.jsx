@@ -1,8 +1,14 @@
+import { useContext } from "react";
+import { ComplexInputContext } from "../context/ComplexInputContext";
 
-function Input({ id, type, placeholder, value, setValue, regEx }) {
+function Input() {
+  const { inputConfig, inputState } = useContext(ComplexInputContext);
+  const { id, type, label, regEx = '' } = inputConfig;
+  const [value, setValue] = inputState
+  
 
   const inputControl = (e) => {
-    if(!regEx) return setValue(e.target.value)
+    if (!regEx) return setValue(e.target.value);
   };
 
   return (
@@ -10,7 +16,7 @@ function Input({ id, type, placeholder, value, setValue, regEx }) {
       id={id}
       name={id}
       type={type}
-      placeholder={placeholder}
+      placeholder={label}
       value={value}
       onChange={inputControl}
       autoComplete="off"

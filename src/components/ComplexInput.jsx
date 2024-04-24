@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import { ComplexInputContext } from "../context/ComplexInputContext";
 import "../styles/complex-input.css";
@@ -7,12 +7,10 @@ import Select from "./Select";
 import Radio from "./Radio";
 import InputFile from "./InputFile";
 
-
 function ComplexInput() {
-  const {inputConfig, inputState} = useContext(ComplexInputContext)
-  const {required, title, id, type, label, options} = inputConfig
-  const [inputValue, setInputValue] = inputState
-
+  const { inputConfig, inputState } = useContext(ComplexInputContext);
+  const { required, title, id, type, label, options } = inputConfig;
+  const [inputValue, setInputValue] = inputState;
 
   const { requiredInputs, setRequiredInputs } = useContext(GlobalContext);
 
@@ -25,51 +23,18 @@ function ComplexInput() {
       });
     }
   }, [inputValue]);
-  
 
   const chooseElement = () => {
-    if (type == "select")
-      return (
-        <Select
-          id={id}
-          options={options}
-          value={inputValue}
-          setValue={setInputValue}
-        />
-      );
-    if (type == "radio")
-      return (
-        <Radio
-          id={id}
-          options={options}
-          value={inputValue}
-          setValue={setInputValue}
-        />
-      );
-    if (type == "file")
-      return (
-        <InputFile
-          id={id}
-          type={type}
-          placeholder={label}
-          value={inputValue}
-          setValue={setInputValue}
-        />
-      );
-    return (
-      <Input
-        id={id}
-        type={type}
-        placeholder={label}
-        value={inputValue}
-        setValue={setInputValue}
-      />
-    );
+    if (type == "select") return <Select />;
+    if (type == "radio") return <Radio />;
+    if (type == "file") return <InputFile />;
+    return <Input />;
   };
 
   return (
     <label
-      className={`complex-input-label ${required && "required"}`} title={title}
+      className={`complex-input-label ${required && "required"}`}
+      title={title}
       htmlFor={id}
     >
       <span
