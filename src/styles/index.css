@@ -90,7 +90,7 @@ input:focus, select:focus {
 
 .invalid-input {
   border-color: var(--denied-color);
-  box-shadow: 0 0 3px -1px var(--denied-color);
+  /* box-shadow: 0 0 3px -1px var(--denied-color); */
 }
 
 /* Chrome, Safari, Edge, Opera */
