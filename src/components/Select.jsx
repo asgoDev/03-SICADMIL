@@ -3,11 +3,10 @@ import { ComplexInputContext } from "../context/ComplexInputContext";
 import "../styles/select.css";
 
 function Select() {
-
   const { inputConfig, inputState } = useContext(ComplexInputContext);
   const { id, options } = inputConfig;
-  const [value, setValue] = inputState
-  
+  const [value, setValue] = inputState;
+
   const inputControl = (e) => {
     let newValue = e.target.value;
     if (!newValue) return;

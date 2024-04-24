@@ -10,17 +10,15 @@ const checkImportantInput = (inputsObj) => {
 }
 
 function GlobalContextProvider(props) {
+
   const [requiredInputs, setRequiredInputs] = useState({});
   const [isAllInputOk, setIsAllInputOk] = useState(false)
   const [formData, setFormData] = useState({})
-
 
   useEffect(()=>{
     setIsAllInputOk(checkImportantInput(requiredInputs))
   }, [requiredInputs])
   
-
-
   return (
     <GlobalContext.Provider value={{ requiredInputs, setRequiredInputs, isAllInputOk, formData, setFormData }}>
       {props.children}

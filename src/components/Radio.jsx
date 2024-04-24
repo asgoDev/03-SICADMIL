@@ -3,14 +3,13 @@ import { ComplexInputContext } from "../context/ComplexInputContext";
 import "../styles/radio.css";
 
 function Radio() {
-
   const { inputConfig, inputState } = useContext(ComplexInputContext);
   const { id, options } = inputConfig;
-  const [value, setValue] = inputState
+  const [value, setValue] = inputState;
 
-  const inputControl = (e) =>{
-    setValue(e.target.value)
-  }
+  const inputControl = (e) => {
+    setValue(e.target.value);
+  };
   return (
     <fieldset className="complex-input__radio-fieldset">
       {options.map((option, i) => (

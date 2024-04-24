@@ -3,9 +3,8 @@ import { ComplexInputContext } from "../context/ComplexInputContext";
 
 function Input() {
   const { inputConfig, inputState } = useContext(ComplexInputContext);
-  const { id, type, label, regEx = '' } = inputConfig;
-  const [value, setValue] = inputState
-  
+  const { id, type, label, regEx = "" } = inputConfig;
+  const [value, setValue] = inputState;
 
   const inputControl = (e) => {
     if (!regEx) return setValue(e.target.value);
