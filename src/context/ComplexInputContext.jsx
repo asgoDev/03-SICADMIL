@@ -24,9 +24,15 @@ function ComplexInputContextProvider({ children, inputConfig }) {
     }
   }, [inputValue]);
 
+  const setInputStyle = () => {
+    if(required && !inputValue) return 'is-empty'
+    return 
+  } 
+
   const contextValue = {
     inputConfig,
     inputState: [inputValue, setInputValue],
+    styles: ()=> setInputStyle()
   };
 
   return (

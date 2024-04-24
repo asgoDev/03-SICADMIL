@@ -3,7 +3,7 @@ import { ComplexInputContext } from "../context/ComplexInputContext";
 import "../styles/radio.css";
 
 function Radio() {
-  const { inputConfig, inputState } = useContext(ComplexInputContext);
+  const { inputConfig, inputState, styles } = useContext(ComplexInputContext);
   const { id, options } = inputConfig;
   const [value, setValue] = inputState;
 
@@ -11,7 +11,7 @@ function Radio() {
     setValue(e.target.value);
   };
   return (
-    <fieldset className="complex-input__radio-fieldset">
+    <fieldset className={`complex-input__radio-fieldset ${styles()}`}>
       {options.map((option, i) => (
         <label key={i} className="complex-input__radio-label" htmlFor={id + i}>
           <input

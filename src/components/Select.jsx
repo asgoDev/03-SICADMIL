@@ -3,7 +3,7 @@ import { ComplexInputContext } from "../context/ComplexInputContext";
 import "../styles/select.css";
 
 function Select() {
-  const { inputConfig, inputState } = useContext(ComplexInputContext);
+  const { inputConfig, inputState, styles } = useContext(ComplexInputContext);
   const { id, options } = inputConfig;
   const [value, setValue] = inputState;
 
@@ -15,7 +15,7 @@ function Select() {
 
   return (
     <select
-      className={`complex-input__select ${!value && "gray"}`}
+      className={`complex-input__select ${!value && "gray"} ${styles()}` }
       name={id}
       id={id}
       value={value}

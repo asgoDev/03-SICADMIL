@@ -12,6 +12,7 @@
   --denied-color: rgb(231, 64, 64);
   --input-border: 1px solid gray;
   --input-radius: 2px;
+  --warning-color: rgb(253, 255, 158);
 }
 
 html {

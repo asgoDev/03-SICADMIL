@@ -35,3 +35,10 @@
   right: -10px;
   z-index: 3;
 }
+
+.is-empty {
+  border-color: var(--denied-color);
+  /* box-shadow: 0 0 3px -1px var(--denied-color); */
+  /* background: var(--warning-color); */
+
+}
