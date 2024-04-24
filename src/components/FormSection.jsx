@@ -15,12 +15,12 @@ const FormFieldset = ({ fieldsetConfigData }) => {
   );
 };
 
-const FormSection = ({ sectionConfigData, formStepController, index }) => {
+const FormSection = ({ sectionConfigData, formScrollController, index }) => {
   let { isAllInputOk } = useContext(GlobalContext);
   const { id, title, config, submit } = sectionConfigData;
 
   return (
-    <section id={id} className={`form__section ${formStepController == (index + 1) && 'form__section--onfocus'}`}>
+    <section id={id} className={`form__section ${formScrollController == (index + 1) && 'form__section--onfocus'}`}>
       <h2 className="form__subtitle">{title}</h2>
       {config.map((fieldsetConfig, i) => {
         return <FormFieldset key={i} fieldsetConfigData={fieldsetConfig} />;

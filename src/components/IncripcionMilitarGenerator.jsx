@@ -42,7 +42,7 @@ function IncripcionMilitarGenerator() {
           {militaryRegistrationFormConfig.map((section, i) => (
             <FormSection
               sectionConfigData={section}
-              formStepController={formStep}
+              formScrollController={formStep}
               index={i}
               key={i}
             />
