@@ -28,19 +28,30 @@ function Planilla() {
 
   const setMilitarInfo = (array) => {
     const militarInfo = [
-      {tag:  "militar profesional", source: formData.militaryProfessionalStatus},
-      {tag:  "miliciano", source: formData.militiaRank},
-      {tag:  "reservista", source: formData.militaryServiceStatus},
-      {tag:  "ninguna", source: !(formData.militaryServiceStatus || formData.militaryProfessionalStatus || formData.militiaRank) },      
+      {
+        tag: "militar profesional",
+        source: formData.militaryProfessionalStatus,
+      },
+      { tag: "miliciano", source: formData.militiaRank },
+      { tag: "reservista", source: formData.militaryServiceStatus },
+      {
+        tag: "ninguna",
+        source: !(
+          formData.militaryServiceStatus ||
+          formData.militaryProfessionalStatus ||
+          formData.militiaRank
+        ),
+      },
     ];
 
     return militarInfo.map((item, i) => (
       <p key={i} className="card__item">
         {item.tag}:{" "}
-        <span className={`fake-check ${ item.source ? "fake-check--checked" : null}`}></span>
+        <span
+          className={`fake-check ${item.source ? "fake-check--checked" : null}`}
+        ></span>
       </p>
-    ))
-
+    ));
   };
 
   return (
@@ -311,7 +322,9 @@ function Planilla() {
             </div>
             <div
               className={`card__picture ${
-                !formData.picture ? "card__picture--empty" : ""
+                formData.picture?.size == 0 || !formData.picture
+                  ? "card__picture--empty"
+                  : ""
               }`}
             >
               {formData.picture && (
