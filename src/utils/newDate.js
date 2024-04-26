@@ -1,14 +1,19 @@
 class MyDate {
   constructor(stringDate) {
-    this.date = stringDate ? new Date(stringDate) : null;
+    // Crear instancia de fecha en la zona horaria de Venezuela (UTC-4)
+    this.date = stringDate ? new Date(stringDate + 'T00:00:00-04:00') : null;
   }
 
   today() {
-    return new Date().toLocaleDateString("es-ES");
+    const date = new Date();
+    date.setUTCHours(date.getUTCHours() - 4); // Ajustar a la zona horaria de Venezuela (UTC-4)
+    return date.toLocaleDateString("es-ES");
   }
 
   todayShort() {
-    return new Date()
+    const date = new Date();
+    date.setUTCHours(date.getUTCHours() - 4); // Ajustar a la zona horaria de Venezuela (UTC-4)
+    return date
       .toLocaleDateString("es-ES", {
         year: "numeric",
         month: "short",
