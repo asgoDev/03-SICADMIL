@@ -109,37 +109,38 @@ const personalConfigData = {
       fieldsetName: "Lugar de nacimiento",
       inputList: [
         {
-          id: "paisNacimiento",
-          label: "País",
-          type: "",
-          title: "Indique país de nacimiento",
-          format: "",
-          required: true,
-        },
-        {
-          id: "estadoNacimiento",
-          label: "Estado",
-          type: "",
-          title: "Indique estado del país donde nació",
-          format: "",
-          required: true,
-        },
-        {
-          id: "municipioNacimiento",
-          label: "Municipio",
-          type: "",
-          title: " Indique municipio del estado.",
-          format: "",
-          required: true,
-        },
-        {
-          id: "parroquiaNacimiento",
-          label: "Parroquia",
-          type: "",
-          title:
-            "Indique parroquia del municipio en que nació / o lo que aplica en el país de nacimiento.",
-          format: "",
-          required: true,
+          type: "location",
+          content: [
+            {
+              id: "paisNacimiento",
+              label: "País",
+              type: "",
+              title: "Indique país de nacimiento",
+              required: true,
+            },
+            {
+              id: "estadoNacimiento",
+              label: "Estado",
+              type: "",
+              title: "Indique estado del país donde nació",
+              required: true,
+            },
+            {
+              id: "municipioNacimiento",
+              label: "Municipio",
+              type: "",
+              title: " Indique municipio del estado.",
+              required: true,
+            },
+            {
+              id: "parroquiaNacimiento",
+              label: "Parroquia",
+              type: "",
+              title:
+                "Indique parroquia del municipio en que nació / o lo que aplica en el país de nacimiento.",
+              required: true,
+            },
+          ],
         },
       ],
     },
@@ -147,36 +148,41 @@ const personalConfigData = {
       fieldsetName: "Información de residencia",
       inputList: [
         {
-          id: "paisDomicilio",
-          label: "País",
-          type: "",
-          title: "Indique en que país reside.",
-          format: "",
-          required: true,
-        },
-        {
-          id: "estadoDomicilio",
-          label: "Estado",
-          type: "",
-          title: "Indique en que estado del país reside.",
-          format: "",
-          required: true,
-        },
-        {
-          id: "municipioDomicilio",
-          label: "Municipio",
-          type: "",
-          title: "Indique en que municipio del estado reside.",
-          format: "",
-          required: true,
-        },
-        {
-          id: "parroquiaDomicilio",
-          label: "Parroquia",
-          type: "",
-          title: "Indique en que parroquia del municipio reside.",
-          format: "",
-          required: true,
+          type: "location",
+          content: [
+            {
+              id: "paisDomicilio",
+              label: "País",
+              type: "",
+              title: "Indique en que país reside.",
+              format: "",
+              required: true,
+            },
+            {
+              id: "estadoDomicilio",
+              label: "Estado",
+              type: "",
+              title: "Indique en que estado del país reside.",
+              format: "",
+              required: true,
+            },
+            {
+              id: "municipioDomicilio",
+              label: "Municipio",
+              type: "",
+              title: "Indique en que municipio del estado reside.",
+              format: "",
+              required: true,
+            },
+            {
+              id: "parroquiaDomicilio",
+              label: "Parroquia",
+              type: "",
+              title: "Indique en que parroquia del municipio reside.",
+              format: "",
+              required: true,
+            },
+          ],
         },
         {
           id: "viaDomicilio",
@@ -388,33 +394,35 @@ const socioEconomicConfigData = {
         },
 
         {
-          id: "companyCountry",
-          label: "País",
-          // type: "select",
-          title: "Indique en qué país está ubicada la empresa.",
-          format: "",
-        },
-        {
-          id: "companyState",
-          label: "Estado",
-          // type: "select",
-          title: "Indique en qué estado del país está ubicada la empresa.",
-          format: "",
-        },
-        {
-          id: "companyMunicipality",
-          label: "Municipio",
-          // type: "select",
-          title: "Indique en qué municipio del estado está ubicada la empresa.",
-          format: "",
-        },
-        {
-          id: "companyParish",
-          label: "Parroquia",
-          // type: "select",
-          title:
-            "Indique en qué parroquia del municipio está ubicada la empresa.",
-          format: "",
+          type: "location",
+          content: [
+            {
+              id: "companyCountry",
+              label: "País",
+              title: "Indique en qué país está ubicada la empresa.",
+              format: "",
+            },
+            {
+              id: "companyState",
+              label: "Estado",
+              title: "Indique en qué estado del país está ubicada la empresa.",
+              format: "",
+            },
+            {
+              id: "companyMunicipality",
+              label: "Municipio",
+              title:
+                "Indique en qué municipio del estado está ubicada la empresa.",
+              format: "",
+            },
+            {
+              id: "companyParish",
+              label: "Parroquia",
+              title:
+                "Indique en qué parroquia del municipio está ubicada la empresa.",
+              format: "",
+            },
+          ],
         },
 
         {

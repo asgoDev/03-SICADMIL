@@ -2,6 +2,18 @@ import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import ComplexInput from "./ComplexInput";
 import ComplexInputContextProvider from "../context/ComplexInputContext";
+import CountryLocationInputs from "./CountryLocationInputs";
+
+const getInputList = (inputList) => {
+  return inputList.map((inputConfig, i) => {
+    if (inputConfig.type == "location") return <CountryLocationInputs content={inputConfig.content} key={i} />;
+    return (
+      <ComplexInputContextProvider inputConfig={inputConfig} key={i}>
+        <ComplexInput />
+      </ComplexInputContextProvider>
+    );
+  });
+};
 
 const FormFieldset = ({ fieldsetConfigData }) => {
   const { fieldsetName, inputList } = fieldsetConfigData;
@@ -9,13 +21,7 @@ const FormFieldset = ({ fieldsetConfigData }) => {
   return (
     <fieldset className="form__fieldset">
       <legend className="form__legend">{fieldsetName}</legend>
-      {inputList.map((inputConfig, i) => {
-        return (
-          <ComplexInputContextProvider inputConfig={inputConfig} key={i}>
-            <ComplexInput />
-          </ComplexInputContextProvider>
-        );
-      })}
+      {getInputList(inputList)}
     </fieldset>
   );
 };
