@@ -15,15 +15,6 @@ const personalConfigData = {
             "Deberá colocar el N° de la cedula de identidad Venezolana. Ejemplo: 20453266.",
         },
         {
-          id: "name",
-          label: "Nombres",
-          type: "",
-          format: "",
-          required: true,
-          title:
-            "Deberá colocar los apellidos completos que aparecen en su cedula de identidad.",
-        },
-        {
           id: "lastname",
           label: "Apellidos",
           type: "",
@@ -31,6 +22,15 @@ const personalConfigData = {
             "Deberá colocar los nombres completos que aparecen en su cedula de identidad.",
           format: "",
           required: true,
+        },
+        {
+          id: "name",
+          label: "Nombres",
+          type: "",
+          format: "",
+          required: true,
+          title:
+            "Deberá colocar los apellidos completos que aparecen en su cedula de identidad.",
         },
         {
           id: "sex",
@@ -337,18 +337,33 @@ const socioEconomicConfigData = {
         {
           id: "studyType",
           label: "Tipo de Estudio",
-          title: "Si la respuesta es afirmativa, indique qué estudia.",
+          title: "Si la respuesta es afirmativa, indique qué estudia o estudió.",
           format: "",
+          type: "select",
+          options: [
+            "Certificación",
+            "Curso",
+            "Diplomado",
+            "Formación Profesional",
+            "Pregrado",
+            "Técnico Superior Universitario (TSU)",
+            "Ingeniería",
+            "Licenciatura",
+            "Especialización",
+            "Maestría",
+            "Doctorado",
+            "Posdoctorado"
+          ],
         },
         {
           id: "specialization",
           label: "Especialidad",
-          title: "Indique, según su profesión, qué especialidad posee.",
+          title: "Indique su especialidad profesional o área de estudio.",
           format: "",
         },
         {
           id: "institution",
-          label: "Institución",
+          label: "Tipo de Instituto",
           type: "select",
           options: ["Pública", "Privada"],
           title:
