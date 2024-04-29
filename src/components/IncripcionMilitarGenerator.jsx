@@ -13,11 +13,8 @@ function IncripcionMilitarGenerator() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // crear funcion que me enfoque el primer section del form al actualizar la pagina
-    // if (formStep == '1'){
-    //   let button = document.querySelector('.form-step--first')
-    //   button.click()
-    // }
+    const elementoDestino = document.getElementById('personal-section');
+    elementoDestino.scrollIntoView();
   }, []);
 
   const handleSubmit = (e) => {
