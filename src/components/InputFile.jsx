@@ -9,7 +9,7 @@ function InputFile() {
   const [value, setValue] = inputState;
 
   const inputControl = (e) => {
-    setValue(e.target.files[0]);
+    setValue(e.target.value);
   };
 
   return (

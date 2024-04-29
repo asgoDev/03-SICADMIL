@@ -8,7 +8,7 @@ import FormSection from "./FormSection";
 import militaryRegistrationFormConfig from "../data/militaryRegistrationFormConfig";
 
 function IncripcionMilitarGenerator() {
-  let { setFormData } = useContext(GlobalContext);
+  let { formData, setFormData } = useContext(GlobalContext);
   const [formStep, setFormStep] = useState("1");
   const navigate = useNavigate();
 
@@ -25,6 +25,10 @@ function IncripcionMilitarGenerator() {
     const data = new FormData(e.target);
     const formDataObject = {};
     for (let [key, value] of data.entries()) {
+      if (key == "picture" && formData["picture"] && value.size == 0) {
+        formDataObject[key] = formData["picture"];
+        continue; // evita cambiar la imagen en formData si no se ha añadido una nueva en en InputFile
+      }
       formDataObject[key] = value;
     }
     setFormData(formDataObject);
