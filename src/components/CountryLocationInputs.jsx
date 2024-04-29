@@ -19,7 +19,7 @@ const CountryLocationInputs = ({ content }) => {
         inputConfig={countryConfig}
         options={countryData.root}
         callback={countryController}
-        start='Venezuela'
+        start="Venezuela"
       />
       <LocationSelect
         inputConfig={stateConfig}

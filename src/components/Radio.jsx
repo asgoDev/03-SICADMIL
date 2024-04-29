@@ -20,7 +20,8 @@ function Radio() {
             name={id}
             value={option}
             type="radio"
-            onClick={inputControl}
+            onChange={inputControl}
+            checked={option == value}
           />
           <span className="complex-input__radio-title">{option}</span>
         </label>

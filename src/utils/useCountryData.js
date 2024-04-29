@@ -12,8 +12,6 @@ export const useCountryData = () => {
   });
   const [isVenezuela, setIsVenezuela] = useState(false);
 
-  //CORREGIIRRRRRRRR
-
   useEffect(() => {
     if (Object.keys(countryData.country).length != 0)
       return setIsVenezuela(!isVenezuela);

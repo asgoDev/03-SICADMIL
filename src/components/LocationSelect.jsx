@@ -11,9 +11,10 @@ const LocationSelect = ({
   changeToInput = true,
   start,
 }) => {
-  const { requiredInputs, setRequiredInputs } = useContext(GlobalContext);
+  const { requiredInputs, setRequiredInputs, formData } =
+    useContext(GlobalContext);
 
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(changeToInput ? start : "");
 
   const { id, title, required, label } = inputConfig;
 
@@ -24,13 +25,26 @@ const LocationSelect = ({
   };
 
   const setInputStyle = () => {
-    if(required && !value) return 'invalid-input'
-    return 
-  } 
+    if (required && !value) return "invalid-input";
+    return;
+  };
 
   useEffect(() => {
     setValue("");
   }, [options]);
+
+  
+  useEffect(() => {
+    if(Object.keys(formData).length != 0) {
+      // callback(formData[id]);
+      setValue(formData[id]);
+    }
+    if ((start && Object.keys(formData).length == 0)) {
+      setValue(start);
+      callback(start);
+    }
+
+  }, []);
 
   useEffect(() => {
     if (required) {
@@ -55,7 +69,6 @@ const LocationSelect = ({
         name={id}
         id={id}
         value={value}
-        start={start}
         onChange={handleChange}
         className={setInputStyle()}
       >
