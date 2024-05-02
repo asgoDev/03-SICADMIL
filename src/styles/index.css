@@ -105,6 +105,10 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+select {  
+  text-overflow: ellipsis;
+}
+
 @media (max-width: 389px) {
   html {
     font-size: 16px;

@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import "../styles/location-select.css";
 
 import ComplexInput from "./ComplexInput";
 import ComplexInputContextProvider from "../context/ComplexInputContext";
@@ -33,17 +34,15 @@ const LocationSelect = ({
     setValue("");
   }, [options]);
 
-  
   useEffect(() => {
-    if(Object.keys(formData).length != 0) {
+    if (Object.keys(formData).length != 0) {
       // callback(formData[id]);
       setValue(formData[id]);
     }
-    if ((start && Object.keys(formData).length == 0)) {
+    if (start && Object.keys(formData).length == 0) {
       setValue(start);
       callback(start);
     }
-
   }, []);
 
   useEffect(() => {
@@ -58,7 +57,9 @@ const LocationSelect = ({
 
   return changeToInput ? (
     <label
-      className={`complex-input-label ${required && "required"}`}
+      className={`complex-input-label ${
+        required && "required"
+      } location-select__label`}
       title={title}
       htmlFor={id}
     >
