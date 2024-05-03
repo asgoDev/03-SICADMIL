@@ -2,8 +2,8 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 7pt;
   user-select: none;
-  width: 21.59cm;
-  padding: 1cm 1cm;
+  width: 215.9mm;
+  padding: 10mm;
   background: white;
   margin: auto;
 
@@ -16,7 +16,6 @@
   height: 50px;
   align-items: center;
   justify-content: space-between;
-  /* gap: 10px; */
 }
 
 .page-header__text {
@@ -42,7 +41,7 @@
 }
 
 .page-date {
-  text-indent: 2cm;
+  text-indent: 20mm;
 }
 
 .bolder {
@@ -155,15 +154,13 @@
 }
 
 .line-container {
-  margin: 0.5cm 0;
+  margin: 2mm 0;
   display: flex;
   align-items: center;
-  /* gap: .3rem; */
 }
 
 .line-container img {
-  display: none;
-  width: 32px;
+  width: 22px;
   transform: rotate(40deg);
 }
 
@@ -173,26 +170,30 @@
 }
 
 .card {
-  width: 97%;
+  /* box-sizing: content-box; */
+  width: 170mm;
+  height: 50mm;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 5cm;
+  grid-template-rows: 1fr;
   border: 2px solid black;
-  font-size: 6pt;
+  font-size: 5.5pt;
 }
 
 .card-a {
-/* max-height: 150px; */
+  padding-top: 1pt;
 }
+
 
 .card__title {
   text-align: center;
+  line-height: 14pt;
 }
 
 .card__content-container {
   display: flex;
-  padding: 3pt 6pt;
+  padding: 0pt 6pt;
 }
 
 .card__principal-data {
@@ -201,9 +202,9 @@
 }
 
 .card__picture {
-  flex-basis: 30%;
+  flex-basis: 25mm;
   position: relative;
-  height: 120px;
+  height: 30mm;
 }
 
 .card__picture > img {
@@ -225,7 +226,7 @@
 
 .card__subtitle,
 .card__item {
-  line-height: 9pt;
+  line-height: 8.5pt;
 }
 
 .card__subtitle {
@@ -245,11 +246,11 @@
 }
 
 .card-b {
-  padding: 13.5pt 9pt;
+  padding: 12pt;
 }
 
 .card-b__militar-info {
-  width: 35%;
+  width: 40%;
   margin-left: 21pt;
 }
 .card-b .card__subtitle {
@@ -274,8 +275,6 @@
 .card-b__card-description {
   margin-left: 50%;
 }
-
-
 
 @media print {
   .page {
